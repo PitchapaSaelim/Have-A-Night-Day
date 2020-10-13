@@ -12,10 +12,10 @@ Iteration
 
 ## Team Members
 
-* Panida 	Ounnaitham
+* Panida 	Ounnaitham 
 * Phakarat 	Khongphaisan
 * Pitchapa 	Sae-lim
 
 ## Licensing
 
-Contact @PitchapaSaelim to license.
+Contact @PanidaOun, @pakarat044, @PitchapaSaelim to license.
