@@ -12,6 +12,6 @@ Iteration
 
 ## Team Members
 
-Panida 	Ounnaitham
-Phakarat 	Khongphaisan
-Pitchapa 	Sae-lim
+* Panida 	Ounnaitham
+* Phakarat 	Khongphaisan
+* Pitchapa 	Sae-lim
