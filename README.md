@@ -1,6 +1,6 @@
 # Have-A-Night-Day
  
-Have A Night Day is a web application that will calculate your sleeping time based on the sleep cycles.
+Have A Night Day is a web application that will calculate your sleeping time based on the sleep cycles, estimate the best times to fall asleep and wake up, and provide knowledge and suggestions about sleeping well.
 
 ## Project Documents
 
