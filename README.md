@@ -12,10 +12,13 @@ Iteration
 
 ## Team Members
 
-* Panida 	Ounnaitham 
-* Phakarat 	Khongphaisan
-* Pitchapa 	Sae-lim
+* [Panida 	Ounnaitham](https://github.com/PanidaOun) 
+* [Phakarat 	Khongphaisan](https://github.com/pakarat044)
+* [Pitchapa 	Sae-lim](https://github.com/PitchapaSaelim)
 
 ## Licensing
 
-Contact @PanidaOun, @pakarat044, @PitchapaSaelim to license.
+Contact our team members to license.
+* @PanidaOun
+* @pakarat044 
+* @PitchapaSaelim
