@@ -4,8 +4,8 @@ Have A Night Day is a web application that will calculate your sleeping time bas
 
 ## Project Documents
 
-* [vision statement]()
-* [requirements]()
+* [Vision Statement]()
+* [Requirements]()
 
 Iteration
 * [Iteration 1 Plan]() and [Task Board]()
