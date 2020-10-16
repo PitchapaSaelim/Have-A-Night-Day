@@ -1,30 +1,33 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-                integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
-                crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
-                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
-                crossorigin="anonymous"></script>
-    </head>
-    {% load crispy_forms_tags %}
-    
-    <body>
-    {% block content %}
 
-    <div class="container">
-        <!-- formสำหรับregisterซึ่งเราเอามาจากviews.py -->
-        <form method="POST">
-            {% csrf_token %}
-            {{form|crispy}}
+<html lang="en" dir="ltr">
 
-            <button class="btn btn-success" type="submit">Login</button><br>
-            <a href="/registeration" target="blank"><strong>register here</strong></a>!
-        </form>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'user/style.css' %}">
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+</head>
+
+<body>
+    <div class="login-box"> 
+        <img src= "..\..\..\..\static\user\images\logo.png" width="200" height="200" align="center" hspace="50">
+        <h1>Have A Night Day</h1>
+        <div class="textbox">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username">
+        </div>
+
+        <div class="textbox">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password">
+        </div>
+        <a href="/home"> <button class="btn">Sign in</button> </a>
+        <a href="/registeration"> <button class="btn">Register</button> </a>
+
     </div>
-    
-    {% endblock %}
-    </body>
-</html>
+
+</body>
+
+</html> 
