@@ -16,10 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from user.views import register_user_view
+from user.views import login_view
+from user.views import logout_view
+
 from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', include('sleep_time_management.urls')),
-    path('', views.index, name='main')
+    path('', include('sleep_time_management.urls')),
+    path('registeration/', register_user_view, name='register_user'),
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
 ]

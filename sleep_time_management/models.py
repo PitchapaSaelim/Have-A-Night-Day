@@ -1,7 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-
-class User(models.Model):
+class Account(models.Model):
     GENDER_MALE = 0         
     GENDER_FEMALE = 1 
     GENDER_NOT_SPECIFIED = 2
@@ -12,15 +12,11 @@ class User(models.Model):
                       (GENDER_OTHERS, 'Others')] 
 
     gender = models.IntegerField(choices=GENDER_CHOICES)
-    username = models.CharField(max_length=100)
-    password = models.CharField(max_length=20)
-    name = models.CharField(max_length=50)
-    surname = models.CharField(max_length=50)
+    username = models.OneToOneField(User, on_delete=models.CASCADE)
     birthdate = models.DateTimeField('birthdate')
-    gender = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.name  
+        return self.username  
 
     # profile_image = ImageField(upload_to='media', blank=True, null=True)
 

@@ -1,9 +1,10 @@
 from django.contrib import admin
 from django.urls import path
+
 from . import views
 
 app_name = 'sleep_time_management'
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('home/', views.home, name='home'),
     path('information/', views.information, name='information')
 ]
