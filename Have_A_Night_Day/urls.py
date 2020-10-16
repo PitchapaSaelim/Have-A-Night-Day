@@ -24,7 +24,7 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', login_view, name='login'),
+    path('', include('sleep_time_management.urls')),
     path('registeration/', register_user_view, name='register_user'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
