@@ -1,6 +1,6 @@
 # Have-A-Night-Day
  
-Have A Night Day is a web application that will calculate your sleeping time based on the sleep cycles, estimate the best times to fall asleep and wake up, and provide knowledge and suggestions about sleeping well. This application is suitable for people with sleeping problems, those who feel tired after waking up, and those who want to find a sleep cycle to wake up with a refreshing feeling. The sleep cycle can track your sleeping patterns then wake you up during your lightest sleep phase, without needing a conventional alarm clock. It also can collect your sleep data to assess the risks of diseases that could happen. Waking up during the light sleep phase feels like waking up by naturally resting. Waking up easy is all about timing!
+Have A Night Day is a web application that will calculate your sleeping time based on the sleep cycles, estimate the best times to fall asleep and wake up, and provide knowledge and suggestions about sleeping well.
 
 ## Project Documents
 
@@ -12,10 +12,13 @@ Iteration
 
 ## Team Members
 
-* Panida 	Ounnaitham 
-* Phakarat 	Khongphaisan
-* Pitchapa 	Sae-lim
+* [Panida 	Ounnaitham](https://github.com/PanidaOun) 
+* [Phakarat 	Khongphaisan](https://github.com/pakarat044)
+* [Pitchapa 	Sae-lim](https://github.com/PitchapaSaelim)
 
 ## Licensing
 
-Contact @PanidaOun, @pakarat044, @PitchapaSaelim to license.
+Contact our team members to license.
+* @PanidaOun
+* @pakarat044 
+* @PitchapaSaelim

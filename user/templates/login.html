@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'user/login.css' %}">
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+</head>
+
+<body>
+    <div class="login-box"> 
+        <img src= "..\..\..\..\static\user\images\logo.png" width="200" height="200" align="center" hspace="50">
+        <h1>Have A Night Day</h1>
+        <div class="textbox">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username">
+        </div>
+
+        <div class="textbox">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password">
+        </div>
+        <a href="/home"> <button class="btn">Sign in</button> </a>
+        <a href="/registeration"> <button class="btn">Register</button> </a>
+
+    </div>
+
+</body>
+
+</html> 
