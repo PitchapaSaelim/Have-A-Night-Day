@@ -13,3 +13,6 @@ def mainprofile(request):
 
 def editprofile(request):
     return render(request, 'sleep_time_management/editprofile.html')
+
+def calculator2(request):
+    return render(request, 'sleep_time_management/calculator2.html')
