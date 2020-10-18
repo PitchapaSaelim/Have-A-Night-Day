@@ -4,27 +4,41 @@
 <html lang="en" dir="ltr">
 
 <head>
+    {% load crispy_forms_tags %}
     <link rel="stylesheet" type="text/css" href="{% static 'user/login.css' %}">
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+                integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+                crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="login-box"> 
-        <img src= "..\..\..\..\static\user\images\logo.png" width="200" height="200" align="center" hspace="50">
+        <img src= "..\..\..\..\static\user\images\logo.png" width="200" height="200" align="center" hspace="48">
         <h1>Have A Night Day</h1>
-        <div class="textbox">
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username">
-        </div>
+        <div class="container">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">        
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                {{form|crispy}}
 
-        <div class="textbox">
-            <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password">
+                <button class="btn" type="submit">Sign in</button><br>
+                <a href="/registration" target="blank">Register here!</a>
+            </form>
         </div>
-        <a href="/home"> <button class="btn">Sign in</button> </a>
-        <a href="/registration"> <button class="btn">Register</button> </a>
 
     </div>
 
