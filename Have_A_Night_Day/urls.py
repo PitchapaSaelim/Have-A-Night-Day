@@ -26,7 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('sleep_time_management.urls')),
     path('', login_view, name='login'),
-    path('registeration/', register_user_view, name='register_user'),
+    path('registration/', register_user_view, name='register_user'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
+    
 ]

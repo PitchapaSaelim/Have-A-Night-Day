@@ -7,3 +7,6 @@ def home(request):
 
 def information(request):
     return render(request, 'sleep_time_management/information.html')
+
+def mainprofile(request):
+    return render(request, 'sleep_time_management/mainprofile.html')
