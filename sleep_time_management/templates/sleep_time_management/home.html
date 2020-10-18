@@ -10,11 +10,11 @@
                 crossorigin="anonymous"></script>
     </head>
     <body>
+        {% include 'navbar.html' %}
         {% if messages %}
             {% for message in messages %}
                 <div class="alert alert-info alert-dismissable"> <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> {{message}} </div>
             {% endfor %}
         {% endif %}
-        <a href="{% url 'sleep_time_management:information'%}">Information</a>
     </body>
 </html>

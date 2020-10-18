@@ -51,7 +51,5 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    # messages.info(request, "Logged out successfully!")
-    # return render(request = request,
-    #                 template_name = "logout.html") 
+    
     return redirect("/login")
