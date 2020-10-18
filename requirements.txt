@@ -3,3 +3,5 @@ coverage
 django
 environ
 django-environ
+django-crispy-forms
+django-extensions
