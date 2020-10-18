@@ -51,5 +51,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    messages.info(request, "Logged out successfully!")
-    return redirect("sleep_time_management:home")
+    # messages.info(request, "Logged out successfully!")
+    # return render(request = request,
+    #                 template_name = "logout.html") 
+    return redirect("/login")
