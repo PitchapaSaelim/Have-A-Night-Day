@@ -10,3 +10,6 @@ def information(request):
 
 def mainprofile(request):
     return render(request, 'sleep_time_management/mainprofile.html')
+
+def editprofile(request):
+    return render(request, 'sleep_time_management/editprofile.html')
