@@ -129,3 +129,7 @@ STATIC_URL = '/static/'
 
 # # Path where media is stored
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+LOGIN_REQUIRED_URL = 'sleep_time_management:home'
+
+LOGIN_URL = 'login'
