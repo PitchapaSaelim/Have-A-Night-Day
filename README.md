@@ -1,6 +1,6 @@
 # Have-A-Night-Day
 
-[![Build Status](https://travis-ci.com/PitchapaSaelim/Have-A-Night-Day.svg?branch=main)](https://travis-ci.com/PitchapaSaelim/Have-A-Night-Day) [![codecov](https://codecov.io/gh/PitchapaSaelim/Have-A-Night-Day/branch/main/graph/badge.svg?token=pejVrzwy4P)](undefined)
+[![Build Status](https://travis-ci.com/PitchapaSaelim/Have-A-Night-Day.svg?branch=main)](https://travis-ci.com/PitchapaSaelim/Have-A-Night-Day) [![codecov](https://codecov.io/gh/PitchapaSaelim/Have-A-Night-Day/branch/main/graph/badge.svg?token=pejVrzwy4P)](https://codecov.io/gh/PitchapaSaelim/Have-A-Night-Day)
  
 Have A Night Day is a web application that will calculate your sleeping time based on the sleep cycles, estimate the best times to fall asleep and wake up, and provide knowledge and suggestions about sleeping well.
 
