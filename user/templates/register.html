@@ -40,7 +40,14 @@
             background-clip: padding-box;
             border: 1px solid #ced4da;
             border-radius: .25rem;
-            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;  
+        }
+        .btn-success{
+            background: #2F576E;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            border-radius: 12px;
+            margin: 0 auto;
+            display: block;
         }
     </style>
     </head>
@@ -53,22 +60,22 @@
                 {{form|crispy}}
                 
                 <h6><label for="fname">First name</label><br></h6>
-                <input type="text" id="fname" name="fname" value=""><br>
+                <input type="text" id="fname" name="fname" value="" required><br>
                 <h6><label for="sname">Surname</label><br></h6>
-                <input type="text" id="lname" name="lname" value=""><br>
+                <input type="text" id="lname" name="lname" value="" required><br>
                 <h6><label for="birth">Birthday</label><br></h6>
-                <input type="text" id="day" name="day" value="Day">
-                <input type="text" id="month" name="month" value="Month">
-                <input type="text" id="year" name="year" value="Year"><br><br>
+                <input type="text" id="day" name="day" value="" placeholder="Day" required>
+                <input type="text" id="month" name="month" value="" placeholder="Month" required>
+                <input type="text" id="year" name="year" value="" placeholder="Year" required><br><br>
 
                 <h6>Gender:<br></h6>
-                <input type="radio" id="male" name="gender" value="male">
+                <input type="radio" id="male" name="gender" value="male" >
                 <label for="male"><p>Male</p></label><br>
-                <input type="radio" id="female" name="gender" value="female">
+                <input type="radio" id="female" name="gender" value="female" >
                 <label for="female"><p>Female</p></label><br>
-                <input type="radio" id="notspec" name="gender" value="notspec">
+                <input type="radio" id="notspec" name="gender" value="notspec" >
                 <label for="notspec"><p>Not specified</p></label><br>
-                <input type="radio" id="other" name="gender" value="other">
+                <input type="radio" id="other" name="gender" value="other" >
                 <label for="other"><p>Other</p></label><br>
 
                 <button class="btn btn-success" type="submit">Create account</button>
@@ -79,7 +86,7 @@
                 
             </form>
             
-            Have an account already? <a href="/login" target="blank"><strong>login</strong></a> here.
+            <p class="end"> Have an account already? <a href="/login" target="blank"><strong>login</strong></a> here.</p>
         </div>
     
     {% endblock %}
