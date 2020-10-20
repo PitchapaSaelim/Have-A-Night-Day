@@ -59,15 +59,13 @@
                 {% csrf_token %}
                 {{form|crispy}}
                 
-                <h6><label for="fname">First name</label><br></h6>
+                <h6><label for="fname">First name*</label><br></h6>
                 <input type="text" id="fname" name="fname" value="" required><br>
-                <h6><label for="sname">Surname</label><br></h6>
+                <h6><label for="sname">Surname*</label><br></h6>
                 <input type="text" id="lname" name="lname" value="" required><br>
-                <h6><label for="birth">Birthday</label><br></h6>
-                <input type="text" id="day" name="day" value="" placeholder="Day" required>
-                <input type="text" id="month" name="month" value="" placeholder="Month" required>
-                <input type="text" id="year" name="year" value="" placeholder="Year" required><br><br>
-
+                <form action="/action_page.php">
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday">
                 <h6>Gender:<br></h6>
                 <input type="radio" id="male" name="gender" value="male" >
                 <label for="male"><p>Male</p></label><br>
@@ -79,13 +77,8 @@
                 <label for="other"><p>Other</p></label><br>
 
                 <button class="btn btn-success" type="submit">Create account</button>
-            </form>
             <form>
-                
 
-                
-            </form>
-            
             <p class="end"> Have an account already? <a href="/login" target="blank"><strong>login</strong></a> here.</p>
         </div>
     
