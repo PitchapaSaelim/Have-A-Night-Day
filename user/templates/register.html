@@ -59,10 +59,10 @@
                 {% csrf_token %}
                 {{form|crispy}}
                 
-                <h6><label for="fname">First name*</label><br></h6>
+                {% comment %} <h6><label for="fname">First name*</label><br></h6>
                 <input type="text" id="fname" name="fname" value="" required><br>
                 <h6><label for="sname">Surname*</label><br></h6>
-                <input type="text" id="lname" name="lname" value="" required><br>
+                <input type="text" id="lname" name="lname" value="" required><br> {% endcomment %}
                 <form action="/action_page.php">
                     <label for="birthday">Birthday:</label>
                     <input type="date" id="birthday" name="birthday">
@@ -74,7 +74,7 @@
                 <input type="radio" id="notspec" name="gender" value="notspec" >
                 <label for="notspec"><p>Not specified</p></label><br>
                 <input type="radio" id="other" name="gender" value="other" >
-                <label for="other"><p>Other</p></label><br>
+                <label for="other"><p>Other</p></label><br> 
                 <button class="btn btn-success" type="submit">Create account</button>
             <form>
 
