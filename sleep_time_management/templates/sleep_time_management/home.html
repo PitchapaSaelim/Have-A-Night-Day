@@ -8,13 +8,108 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
                 integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
                 crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            input {
+                display: block;
+                width: 100%;
+                height: calc(2.25rem + 2px);
+                padding: .375rem .75rem;
+                color: #495057;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid #ced4da;
+                border-radius: .25rem;
+                transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                outline: none;
+                
+            }
+            .alert {
+                margin-top: 50px;
+                position: fixed;
+            }
+            .time {
+                text-align: center;
+            }
+            form {
+                display: inline-block;
+            }
+            body h1 {
+                display: inline-block;
+                margin-right: 50px;
+                font-family: Rubik Mono One;
+            }
+            .container {
+                margin: 200px;
+            }
+            .button {
+                text-decoration: none;
+                margin:20px auto;
+                margin-bottom: 60px;
+                cursor: pointer;
+                outline: none;
+                background: #2F576E;
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                border-radius: 12px;
+                display: block;
+                color: #fff;
+                font-weight: 400;
+                text-align: center;
+                white-space: nowrap;
+                user-select: none;
+                border: 1px solid transparent;
+                padding: .375rem .75rem;
+                font-size: 18px;
+                line-height: 1.5;
+                transition-property: color, background-color, border-color, box-shadow;
+                transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
+                transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+                transition-delay: 0s, 0s, 0s, 0s;
+                width: 150px;
+                height: 40px;
+            }
+            body .button {
+                font-family: Rubik Mono One;
+            }
+        </style>
     </head>
+
     <body>
         {% include 'navbar.html' %}
-        {% if messages %}
+
+        <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-hidden="close">&times;</a>
+            <strong>Success!</strong> This alert box could indicate a successful or positive action.
+        </div>
+        
+        <!-- {% if messages %}
             {% for message in messages %}
-                <div class="alert alert-info alert-dismissable"> <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> {{message}} </div>
+            <div class="alert alert-success alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
+                {{message}}
+            </div>
             {% endfor %}
-        {% endif %}
+        {% endif %} -->
+        
+        <div class="container">
+            <div class="time">
+            <h1>I have to wake up at</h1>
+            <form action="/form/submit" method="post">
+            <input type="time" name="time" value="00:00" />
+            </form>
+            </div>
+            <button class="button">calculate</button>
+          
+            <div class="time">
+                <h1>I plan to FALL ASLEEP at</h1>
+                <form action="/form/submit" method="post">
+                <input type="time" name="time" value="00:00" />
+                </form>
+            </div> 
+            <button class="button">calculate</button>
+        </div>
+       
+        
     </body>
 </html>
