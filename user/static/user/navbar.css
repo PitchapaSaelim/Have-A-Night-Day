@@ -12,6 +12,7 @@ body {
 
 .nav-link{
     padding: 0%;
+    pointer-events: auto;
 }
 .nav-item h5 {
     padding-top: 5px;
