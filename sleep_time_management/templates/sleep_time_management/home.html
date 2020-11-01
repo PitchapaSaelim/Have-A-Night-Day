@@ -77,20 +77,14 @@
 
     <body>
         {% include 'navbar.html' %}
-
-        <div class="alert alert-success alert-dismissible">
-            <a href="#" class="close" data-dismiss="alert" aria-hidden="close">&times;</a>
-            <strong>Success!</strong> This alert box could indicate a successful or positive action.
-        </div>
-        
-        <!-- {% if messages %}
+        {% if messages %}
             {% for message in messages %}
             <div class="alert alert-success alert-dismissible">
-                <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
+                <a href="#" class="close" data-dismiss="alert" aria-hidden="close">&times;</a>
                 {{message}}
             </div>
             {% endfor %}
-        {% endif %} -->
+        {% endif %}
         
         <div class="container">
             <div class="time">
