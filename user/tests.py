@@ -6,7 +6,6 @@ from django.contrib.auth import get_user_model
 from django.contrib import auth
 
 
-
 class AuthorModelTest(TestCase):
 
 
@@ -23,7 +22,7 @@ class AuthorModelTest(TestCase):
         self.assertEqual(user.username,'Saiparn')
 
     def test_addAccount(self):
-        response = self.client.post(reverse("register_user"),{'username':'Parn', 'fname':'Panida', 'lname':'Ounnaitham', 'password1':'Saiparn021143', 'password2':'Saiparn021143'})
+        response = self.client.post(reverse("register_user"),{'username':'Parn', 'fname':'Panida', 'lname':'Ounnaitham', 'birth_date':'2000-11-02', 'gender':'Female', 'password1':'Saiparn021143', 'password2':'Saiparn021143'})
         self.assertEqual(response.status_code, 302)
 
     def test_authenticate_user(self):
