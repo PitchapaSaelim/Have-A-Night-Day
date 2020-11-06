@@ -7,7 +7,7 @@ class NewForm(UserCreationForm):
     fname = forms.CharField(label='First name', max_length=100)
     lname = forms.CharField(label='Last name', max_length=100)
     birth_date = forms.DateField(help_text='Required. Format: YYYY-MM-DD')
-    gender = forms.CharField(label='Gender', max_length=100, help_text='Required Female or Male')
+    gender = forms.CharField(label='Gender', max_length=100, help_text='Required. Female or Male')
 
     class Meta:
         model = User
