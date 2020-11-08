@@ -9,7 +9,7 @@ class Profile(models.Model):
     gender = models.CharField(max_length=100, default='')
 
     def __str__(self):
-        return self.user
+        return self.user.username
     
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
