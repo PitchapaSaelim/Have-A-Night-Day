@@ -2,19 +2,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #EAB93B; 
 }
-.container {
-    background-color: #EAB93B; 
-    
-}
+
  p {
     font-size: 13px;
     display: block;
     margin: 0 auto;
  }
- p.end{
-    font-size: 13px;
-    text-align: center;
- }
+
 input#fname {
     display: block;
     width: 100%;
