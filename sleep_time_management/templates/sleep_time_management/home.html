@@ -89,20 +89,26 @@
         <div class="container">
             <div class="time">
             <h1>I have to wake up at</h1>
-            <form action="/form/submit" method="post">
-            <input type="time" name="time" value="00:00" />
+            <form action="{% url 'sleep_time_management:calculator2'%}" method="post">
+                {% csrf_token %}
+            <input type="time" name="waketime" value="00:00" />
+            <button type="submit" class="button">calculate</button>
             </form>
             </div>
-            <button type="submit" class="button">calculate</button>
+        
           
             <div class="time">
                 <h1>I plan to FALL ASLEEP at</h1>
-                <form action="/form/submit" method="post">
-                <input type="time" name="time" value="00:00" />
+                <form action="{% url 'sleep_time_management:calculator3'%}" method="post">
+                    {% csrf_token %}
+                <input type="time" name="sleeptime" value="00:00" />
+                <button type="submit" class="button">calculate</button>
                 </form>
+    
             </div> 
-            <button type="submit" class="button">calculate</button>
         </div>
+
+        
         
         
     </body>

@@ -10,8 +10,9 @@ urlpatterns = [
     path('information/', views.information, name='information'),
     path('mainprofile/', views.mainprofile, name='mainprofile'),
     path('editprofile/', views.editprofile, name='editprofile'),
-    path('calculator2/', views.calculator2, name='calculator2'),
-    path('calculator3/', views.calculator2, name='calculator3'),
+    path('calculator2/', views.calculate2_view, name='calculator2'),
+    path('calculator3/', views.calculate3_view, name='calculator3'),
     path('logout/', views.logout_view, name='logout')
+
 
 ]
