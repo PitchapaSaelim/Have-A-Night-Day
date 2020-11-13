@@ -17,6 +17,10 @@ Iteration
 * [Iteration 4 Plan](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Iteration-4-Plan) and [Task Board](https://github.com/PitchapaSaelim/Have-A-Night-Day/projects/4)
 * [Iteration 5 Plan](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Iteration-5-Plan) and [Task Board](https://github.com/PitchapaSaelim/Have-A-Night-Day/projects/5)
 
+Code Review
+* [Procedure](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Procedure)
+* [Checklist](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Checklist)
+
 ## Team Members
 
 * [Panida 	Ounnaitham](https://github.com/PanidaOun) 
