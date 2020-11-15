@@ -41,7 +41,7 @@
             body .button {
                 font-family: Rubik Mono One;
             }
-            button .dropbtn{
+            /* button .dropbtn{
                 display: block;
                 text-align: center;
             }
@@ -99,7 +99,22 @@
                 display: block;
                 margin: 0 40%;
             }
-             
+              */
+            select#mySelect {
+                width: 235px;
+                height: 46px;
+                background: rgba(255, 252, 252, 0.86);
+                color: black;
+                border-radius: 10px;
+                padding: 0px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                margin: 50px 39%;
+                margin-bottom: 0px;
+            } 
+
             span {
                 color: red;
             }
@@ -113,19 +128,27 @@
         {% include 'navbar.html' %}
         <div class="container">
             <h1>You should try to wake up at one of the following times</h1>
-           <div class="dropdown">
+           <!-- <div class="dropdown">
                 <button onclick="myFunction()" class="dropbtn">times</button>
                 <div id="myDropdown" class="dropdown-content">
                     {% for time in waketime %}
-                    <p onclick="change_text()" id="{{time}}">{{time}}</p>
+                    <a id="{{time}}">{{time}}</a>
                     {% endfor %}
                 </div>
-            </div>
+            </div> -->
 
-            <button type="submit" class="button">submit</button>
+            <form>
+                <select id="mySelect">
+                    {% for time in waketime %}
+                    <option value="{{time}}">{{time}}</option>
+                    {% endfor %}
+                </select>
+              </form>
 
-            <!-- <p id="p1">time</p> -->
-            <p><span>SUGGESTION</span> A good night's sleep consists of 5-6 complete sleep cycles.</p>
+            <button type="submit" class="button" onclick="change_text()">submit</button>
+
+            <p id="p1"></p>
+            <p><span>SUGGESTION:</span> A good night's sleep consists of 5-6 complete sleep cycles.</p>
         </div>
 
         <script>
@@ -135,8 +158,13 @@
                 document.getElementById("myDropdown").classList.toggle("show");
             }
 
+            function myfunctionn(ctrl) {
+                var TextInsideLi = ctrl.getElementsByTagName('p')[0].innerHTML;
+                document.getElementById("p1").innerHTML = TextInsideLi;
+            }
+
             function change_text(){
-                document.getElementById("p1").innerHTML = document.getElementById("home").innerHTML;
+                document.getElementById("p1").innerHTML = "Collect " + document.getElementById("mySelect").value + " already.";
             }
             
             
