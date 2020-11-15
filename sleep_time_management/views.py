@@ -46,6 +46,8 @@ def calculate2_view(request):
             minute = caltime%60
             if (minute==0) :
                 minute = '00'
+            if (minute<10) :
+                minute = '0'+str(minute)
             listtime.append(f"{hour}:{minute}")
             if (hour <= 0):
                 caltime += (24*60)
