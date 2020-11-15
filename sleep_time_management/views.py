@@ -40,18 +40,22 @@ def calculate2_view(request):
         time = waketime.split(':')
         caltime = (int(time[0])*60)+int(time[1])
         listtime = []
+    
         for i in range(6):
             caltime -= 90
+            if (caltime<0):
+                caltime+=(24*60)
             hour = caltime//60
             minute = caltime%60
+            if (int(minute)<10 and minute!=0) :
+                minute = '0'+str(minute)
             if (minute==0) :
                 minute = '00'
-            if (minute<10) :
-                minute = '0'+str(minute)
             listtime.append(f"{hour}:{minute}")
             if (hour <= 0):
                 caltime += (24*60)
         return render(request,'sleep_time_management/calculator2.html',{'waketime': listtime})
+        # return render(request,'sleep_time_management/calculator2.html',{'waketime': waketime})
 
 
 def calculate3_view(request):
