@@ -10,17 +10,13 @@
 
 ### How to Check Python Version 
 > To check the version installed, open a terminal window and entering the following:
-* Linux:
+* Linux/MacOS:
 ```
-python ––version
+python3 –-version
 ``` 
 * Windows: 
 ``` 
 python ––version
-```
-* MacOS: 
-```
-python3 –-version
 ```
 ### How to Check Django Version 
 * Linux/MacOS:
