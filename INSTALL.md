@@ -110,7 +110,7 @@ pip install --upgrade django
             ```
             ...\> py manage.py runserver
             ``` 
-            * Terminal window will shows like this:
+            * Terminal window will show like this:
                 ``` 
                 Watching for file changes with StatReloader
                 Performing system checks...
