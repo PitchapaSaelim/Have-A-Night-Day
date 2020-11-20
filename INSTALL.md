@@ -68,6 +68,14 @@ pip install --upgrade django
             ``` 
     * Change directory to the directory that contain `env` file.
     * Activate a virtual environment.
+        * Linux/MacOS:
+            ```
+            $ source venv/bin/activate
+            ```
+        * Windows:
+            ```
+            ...\> env\Scripts\activate
+            ``` 
 * *See more details about [Running Python Apps in a Virtual Environment](https://cpske.github.io/ISP/django/virtualenv).*
 ## Steps needed to configure the application for running
 * Install the require packages for this project.
@@ -94,8 +102,8 @@ pip install --upgrade django
 
 ## How to start the application and verify it is working
 1. **Clone** Have-A-Night-Day project to your machine. (*See how to clone the project above.*)
-2. Following the **setting up a virtual environment** above.
-3. Following the **steps needed to configure the application for running** above.
+2. Follows the **setting up a virtual environment** above.
+3. Follows the **steps needed to configure the application for running** above.
 4. Access to a command-line/terminal window.
     * Change directory to the directory that contain `Have-A-Night-Day` folder.
         ```
