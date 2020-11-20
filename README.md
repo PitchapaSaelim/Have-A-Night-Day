@@ -8,7 +8,7 @@ Have A Night Day is a web application that will calculate your sleeping time bas
 
 * [Vision Statement](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Vision-Statement)
 * [Requirements](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Requirements)
-* [Project Installation Instructions](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Instructions-How-to-Install-and-Run-Locally)
+* [Project Installation Instructions](INSTALL.md)
 
 Iteration
 * [Set up a project](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Set-up-a-project)
