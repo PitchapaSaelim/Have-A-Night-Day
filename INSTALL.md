@@ -1,3 +1,4 @@
+# Instructions How to Install and Run Locally
 ## Prerequisite (required) software
 |    Name of software    | Versions |
 |:----------------------:|:--------:|
@@ -126,4 +127,3 @@ cmd> git clone https://github.com/PitchapaSaelim/Have-A-Night-Day.git
     * Follows the link http://127.0.0.1:8000/ 
 5. **Register** in the application.
 6. **Log in** with the user account that you created to the application.
-
