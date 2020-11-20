@@ -11,22 +11,22 @@
 ### How to Check Python Version 
 > To check the version installed, open a terminal window and entering the following:
 * Linux/MacOS:
-```
-python3 –-version
-``` 
+    ```
+    $ python3 –-version
+    ``` 
 * Windows: 
-``` 
-python ––version
-```
+    ``` 
+    python ––version
+    ```
 ### How to Check Django Version 
 * Linux/MacOS:
-```
-$ python3 -m django --version
-```
+    ```
+    $ python3 -m django --version
+    ```
 * Windows: 
-``` 
-...\>py -m django --version
-```
+    ``` 
+    ...\>py -m django --version
+    ```
 ### How to upgrade Django version
 > This command will upgrade django to the latest available version.
 ```
@@ -35,25 +35,25 @@ pip install --upgrade django
 ## How to clone Have-A-Night-Day project
 * Access to a command-line/terminal window.
     * Linux:
-    ```
-    CTRL-ALT-T or CTRL-ALT-F2
-    ``` 
+        ```
+        CTRL-ALT-T or CTRL-ALT-F2
+        ``` 
     * Windows: 
-    ``` 
-    WIN+R > type powershell > Enter/OK or Type in search tap "cmd"
-    ```
+        ``` 
+        WIN+R > type powershell > Enter/OK or Type in search tap "cmd"
+        ```
     * MacOS: 
-    ```
-    Finder > Applications > Utilities > Terminal
-    ```
+        ```
+        Finder > Applications > Utilities > Terminal
+        ```
 * Change directory to the directory that the user wants to run the application.
-```
-cmd> cd directory name
-```
+    ```
+    cmd> cd directory name
+    ```
 * Use git clone in the command line. (Link to clone the project `https://github.com/PitchapaSaelim/Have-A-Night-Day.git`)
-```
-cmd> git clone https://github.com/PitchapaSaelim/Have-A-Night-Day.git
-```
+    ```
+    cmd> git clone https://github.com/PitchapaSaelim/Have-A-Night-Day.git
+    ```
 ## Instructions for setting up a virtual environment (virtualenv)
 > **a virtual environment** is a tool that helps to keep dependencies required by different projects separate by creating isolated python virtual environments for them.
 * Access to a command-line/terminal window.
@@ -75,6 +75,7 @@ cmd> git clone https://github.com/PitchapaSaelim/Have-A-Night-Day.git
         ```
         cmd> pip install -r requirements.txt
         ``` 
+        > Description of the require packages
         * **coverage** is a measure used to describe the degree to which the source code of a program is executed when a particular test suite runs.
         * **django-environ** allows you to use Twelve-factor methodology to configure your Django application with environment variables.
         * **django-crispy-forms** is an application that helps to manage Django forms. It allows adjusting forms’ properties (such as method, send button or CSS classes) on the backend without having to re-write them in the template.
