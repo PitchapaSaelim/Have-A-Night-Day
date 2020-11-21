@@ -1,7 +1,27 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <style>
+            .container {
+                margin-top : 80px;
+                text-align: center;
+                font-family: Rubik Mono One;
+            }
+            img.profile {
+                width: 120px;
+                margin: 30px;
+            }
+        </style>
+    </head>
     <body>
         {% include 'navbar.html' %}
-
+        <div class="container">
+            <a><img class="profile" src="..\..\..\..\static\user\images\profile.png" alt="logo" ></a>
+            <h4>Name</h4>
+            <h4>Subname</h4>
+            <h4>birthday</h4>
+            <h4>gender</h4>
+        </div>
+        
     </body>
 </html>
