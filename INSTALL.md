@@ -86,34 +86,29 @@ cmd> pip install --upgrade django
             ``` 
 * *See more details about [Running Python Apps in a Virtual Environment](https://cpske.github.io/ISP/django/virtualenv).*
 ## Steps needed to configure the application for running
+* Access to a command-line/terminal window.
 * Change directory to the directory that contain `Have-A-Night-Day` folder.
     ```
     cmd> cd Have-A-Night-Day
     ```
 * Install the require packages for this project.
-    * Access to a command-line/terminal window.
-        ```
-        cmd> pip install -r requirements.txt
-        ``` 
-        > Description of the require packages
-        * **coverage** is a measure used to describe the degree to which the source code of a program is executed when a particular test suite runs.
-        * **django-environ** allows you to use Twelve-factor methodology to configure your Django application with environment variables.
-        * **django-crispy-forms** is an application that helps to manage Django forms. It allows adjusting forms’ properties (such as method, send button or CSS classes) on the backend without having to re-write them in the template.
-        * **django-extensions** is a collection of custom extensions for the Django Framework.
+    ```
+    cmd> pip install -r requirements.txt
+    ``` 
+    > Description of the require packages
+    * **coverage** is a measure used to describe the degree to which the source code of a program is executed when a particular test suite runs.
+    * **django-environ** allows you to use Twelve-factor methodology to configure your Django application with environment variables.
+    * **django-crispy-forms** is an application that helps to manage Django forms. It allows adjusting forms’ properties (such as method, send button or CSS classes) on the backend without having to re-write them in the template.
+    * **django-extensions** is a collection of custom extensions for the Django Framework.
 * Running migrations
-    * Access to a command-line/terminal window.
-    * Change directory to the directory that contain `Have-A-Night-Day` folder.
+    * Linux/MacOS:
         ```
-        cmd> cd Have-A-Night-Day
+        $ python3 manage.py migrate
         ```
-        * Linux/MacOS:
-            ```
-            $ python3 manage.py migrate
-            ```
-        * Windows:
-            ```
-            ...\> py manage.py migrate
-            ``` 
+    * Windows:
+        ```
+        ...\> py manage.py migrate
+        ``` 
 * Adding initial data to the database.
     * Linux/MacOS:
         ```
