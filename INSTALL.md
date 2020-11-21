@@ -86,9 +86,12 @@ cmd> pip install --upgrade django
                 ...\> cd env
                 ...\> Scripts\activate
                 ``` 
-
 * *See more details about [Running Python Apps in a Virtual Environment](https://cpske.github.io/ISP/django/virtualenv).*
 ## Steps needed to configure the application for running
+* Change directory to the directory that contain `Have-A-Night-Day` folder.
+    ```
+    cmd> cd Have-A-Night-Day
+    ```
 * Install the require packages for this project.
     * Access to a command-line/terminal window.
         ```
