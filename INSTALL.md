@@ -129,6 +129,6 @@ cmd> pip install --upgrade django
                 Starting development server at http://127.0.0.1:8000/
                 Quit the server with CTRL-BREAK.
                 ``` 
-    * Follows the link http://127.0.0.1:8000/ 
+    * Follows the link http://127.0.0.1:8000/ in terminal window.
 5. **Register** in the application.
 6. **Log in** with the user account that you created to the application.
