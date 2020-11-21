@@ -81,11 +81,9 @@ cmd> pip install --upgrade django
             $ source venv/bin/activate
             ```
         * Windows:
-            *  Change directory to the directory that contain `env` file.
-                ```
-                ...\> cd env
-                ...\> Scripts\activate
-                ``` 
+            ```
+            ...\> env\Scripts\activate
+            ``` 
 * *See more details about [Running Python Apps in a Virtual Environment](https://cpske.github.io/ISP/django/virtualenv).*
 ## Steps needed to configure the application for running
 * Change directory to the directory that contain `Have-A-Night-Day` folder.
@@ -105,6 +103,9 @@ cmd> pip install --upgrade django
 * Running migrations
     * Access to a command-line/terminal window.
     * Change directory to the directory that contain `Have-A-Night-Day` folder.
+        ```
+        cmd> cd Have-A-Night-Day
+        ```
         * Linux/MacOS:
             ```
             $ python3 manage.py migrate
