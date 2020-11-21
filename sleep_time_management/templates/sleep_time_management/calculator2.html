@@ -10,7 +10,7 @@
                 text-align: center;
             }
             .container {
-                margin: 200px;
+                margin: 200px 0px 0px 200px;
             }
             .button {
                 text-decoration: none;
@@ -40,66 +40,8 @@
             }
             body .button {
                 font-family: Rubik Mono One;
-            }
-            /* button .dropbtn{
-                display: block;
-                text-align: center;
-            }
-            .dropbtn {
-                width: 235px;
-                height: 46px;
-                background: rgba(255, 252, 252, 0.86);
-                color: rgba(0, 0, 0, 0.35);
-                border-radius: 10px;
-                padding: 0px;
-                font-size: 16px;
-                border: none;
-                cursor: pointer;
-                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-                margin: 50px;
                 margin-bottom: 0px;
-                }
-
-            .dropbtn:hover, .dropbtn:focus {
-                background-color: #ddd;
-                outline: none;
-                }
-
-            .dropdown {
-                position: relative;
-                display: block;
-                text-align: center;
-                
-                }
-
-            .dropdown-content {
-                display: none;
-                
-                position: absolute;
-                background-color: #f1f1f1;
-                min-width: 160px;
-                overflow: auto;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
-                }
-
-            .dropdown-content p {
-                color: black;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                text-align: center;
-                }
-
-            .dropdown p:hover {
-                background-color: #ddd;
             }
-
-            .show {
-                display: block;
-                margin: 0 40%;
-            }
-              */
             select#mySelect {
                 width: 235px;
                 height: 46px;
@@ -114,12 +56,26 @@
                 margin: 50px 39%;
                 margin-bottom: 0px;
             } 
-
             span {
                 color: red;
             }
             p {
                 text-align: center;
+            }
+            p#p1 {
+                text-align: center;
+                margin-top: 10px;
+            }
+            a.button {
+                background-color: #526273;
+                margin-top: 0px;
+                margin-bottom: 40px;
+                text-decoration: none;
+                color: white;
+            }
+            a.button:hover{
+                text-decoration:none;
+                color: white;
             }
         </style>
     </head>
@@ -128,14 +84,6 @@
         {% include 'navbar.html' %}
         <div class="container">
             <h1>You should try to fall asleep at one of the following times</h1>
-           <!-- <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">times</button>
-                <div id="myDropdown" class="dropdown-content">
-                    {% for time in waketime %}
-                    <a id="{{time}}">{{time}}</a>
-                    {% endfor %}
-                </div>
-            </div> -->
 
             <form>
                 <select id="mySelect">
@@ -147,9 +95,12 @@
 
             <button type="submit" class="button" onclick="change_text()">submit</button>
 
-            <p id="p1"></p>
-            <p><span>SUGGESTION:</span> A good night's sleep consists of 5-6 complete sleep cycles.</p>
+            <p id="p1"></p> 
         </div>
+
+        <a class="button" href="{% url 'sleep_time_management:home'%}">calculate again</a>
+        <p><span>SUGGESTION:</span> A good night's sleep consists of 5-6 complete sleep cycles.</p> 
+        
 
         <script>
             /* When the user clicks on the button, 
