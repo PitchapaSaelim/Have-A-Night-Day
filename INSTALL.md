@@ -75,19 +75,18 @@ cmd> pip install --upgrade django
             ```
             ...\> virtualenv env
             ``` 
-    * Change directory to the directory that contain `env` file.
-        ```
-        cmd> cd env
-        ``` 
     * Activate a virtual environment.
         * Linux/MacOS:
             ```
             $ source venv/bin/activate
             ```
         * Windows:
-            ```
-            ...\> env\Scripts\activate
-            ```  
+            *  Change directory to the directory that contain `env` file.
+                ```
+                ...\> cd env
+                ...\> Scripts\activate
+                ``` 
+
 * *See more details about [Running Python Apps in a Virtual Environment](https://cpske.github.io/ISP/django/virtualenv).*
 ## Steps needed to configure the application for running
 * Install the require packages for this project.
