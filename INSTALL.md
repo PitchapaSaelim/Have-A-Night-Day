@@ -67,6 +67,9 @@ cmd> pip install --upgrade django
             ...\> virtualenv env
             ``` 
     * Change directory to the directory that contain `env` file.
+        ```
+        cmd> cd env
+        ``` 
     * Activate a virtual environment.
         * Linux/MacOS:
             ```
