@@ -16,7 +16,7 @@
     ``` 
 * Windows: 
     ``` 
-    python ––version
+    ...\> python ––version
     ```
 ### How to Check Django Version 
 * Linux/MacOS:
@@ -25,12 +25,12 @@
     ```
 * Windows: 
     ``` 
-    ...\>py -m django --version
+    ...\> py -m django --version
     ```
 ### How to upgrade Django version
 > This command will upgrade django to the latest available version.
 ```
-pip install --upgrade django
+cmd> pip install --upgrade django
 ```
 ## How to clone Have-A-Night-Day project
 * Access to a command-line/terminal window.
