@@ -57,6 +57,15 @@ cmd> pip install --upgrade django
 ## Instructions for setting up a virtual environment (virtualenv)
 > **a virtual environment** is a tool that helps to keep dependencies required by different projects separate by creating isolated python virtual environments for them.
 * Access to a command-line/terminal window.
+    * Install a virtual environment.
+        * Linux/MacOS:
+            ```
+            $ python3 -m pip install virtualenv
+            ```
+        * Windows:
+            ```
+            ...\> python -m pip install virtualenv
+            ```    
     * Create new virtual environment.
         * Linux/MacOS:
             ```
