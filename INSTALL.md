@@ -57,6 +57,15 @@ cmd> pip install --upgrade django
 ## Instructions for setting up a virtual environment (virtualenv)
 > **a virtual environment** is a tool that helps to keep dependencies required by different projects separate by creating isolated python virtual environments for them.
 * Access to a command-line/terminal window.
+    * Install a virtual environment.
+        * Linux/MacOS:
+            ```
+            $ python3 -m pip install virtualenv
+            ```
+        * Windows:
+            ```
+            ...\> python -m pip install virtualenv
+            ```    
     * Create new virtual environment.
         * Linux/MacOS:
             ```
@@ -66,7 +75,6 @@ cmd> pip install --upgrade django
             ```
             ...\> virtualenv env
             ``` 
-    * Change directory to the directory that contain `env` file.
     * Activate a virtual environment.
         * Linux/MacOS:
             ```
@@ -78,6 +86,10 @@ cmd> pip install --upgrade django
             ``` 
 * *See more details about [Running Python Apps in a Virtual Environment](https://cpske.github.io/ISP/django/virtualenv).*
 ## Steps needed to configure the application for running
+* Change directory to the directory that contain `Have-A-Night-Day` folder.
+    ```
+    cmd> cd Have-A-Night-Day
+    ```
 * Install the require packages for this project.
     * Access to a command-line/terminal window.
         ```
@@ -91,6 +103,9 @@ cmd> pip install --upgrade django
 * Running migrations
     * Access to a command-line/terminal window.
     * Change directory to the directory that contain `Have-A-Night-Day` folder.
+        ```
+        cmd> cd Have-A-Night-Day
+        ```
         * Linux/MacOS:
             ```
             $ python3 manage.py migrate
@@ -99,7 +114,15 @@ cmd> pip install --upgrade django
             ```
             ...\> py manage.py migrate
             ``` 
-
+* Adding initial data to the database.
+    * Linux/MacOS:
+        ```
+        $ python3 manage.py loaddata users.json
+        ```
+    * Windows:
+        ```
+        ...\> py manage.py loaddata users.json
+        ``` 
 ## How to start the application and verify it is working
 1. **Clone** Have-A-Night-Day project to your machine. (*See how to clone the project above.*)
 2. Follows the **setting up a virtual environment** above.
@@ -130,5 +153,12 @@ cmd> pip install --upgrade django
                 Quit the server with CTRL-BREAK.
                 ``` 
     * Follows the link http://127.0.0.1:8000/ in terminal window.
-5. **Register** in the application.
-6. **Log in** with the user account that you created to the application.
+5. **Log in** in the application with this account. 
+    ```
+    Username: user1
+    Password: passworduser1
+    ``` 
+6. Deactivate virtualenv when you want to quit the server.
+    ```
+    cmd> deactivate 
+    ``` 
