@@ -92,6 +92,27 @@ def calculate3_view(request):
         return render(request, 'sleep_time_management/calculator3.html', {'sleeptime': listtime})
 
 
-def sleep_data(request):
-    event_time = request.POST["eventtime"]
-    return render(request, 'sleep_time_management/calculator2.html')
+def bed_sleep_data(request):
+    if request.method == 'POST':
+        get_bed_event_time = request.POST["bed_event_time"]
+        time = get_bed_event_time.split(':')
+        cal_bed_time = (int(time[0])*60)+int(time[1])
+        bed_event_time = Eventtime.objects.filter(user=request.user).first()
+        bed_event_time.bed_event_time = cal_bed_time
+        bed_event_time.save()
+    bed_event_time.sleep_data = bed_event_time.calculate_sleep_wake_data()
+    bed_event_time.save()
+    return render(request, 'sleep_time_management/home.html')
+
+
+def wake_sleep_data(request):
+    if request.method == 'POST':
+        get_wake_event_time = request.POST["wake_event_time"]
+        time = get_wake_event_time.split(':')
+        cal_wake_time = (int(time[0])*60)+int(time[1])
+        wake_event_time = Eventtime.objects.filter(user=request.user).first()
+        wake_event_time.wake_event_time = cal_wake_time
+        wake_event_time.save()
+    wake_event_time.sleep_data = wake_event_time.calculate_sleep_bed_data()
+    wake_event_time.save()
+    return render(request, 'sleep_time_management/home.html')
