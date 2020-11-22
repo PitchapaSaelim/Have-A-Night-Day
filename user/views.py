@@ -1,7 +1,5 @@
 from django.shortcuts import render, redirect
 
-from sleep_time_management.models import Account
-
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate
@@ -38,7 +36,6 @@ def register_user_view(request):
                   template_name="register.html",
                   context={"form": form})
 
-
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(request=request, data=request.POST)
@@ -60,11 +57,8 @@ def login_view(request):
                   template_name="login.html",
                   context={"form": form})
 
-
 @login_required
 def logout_view(request):
     logout(request)
 
     return redirect("/login")
-
-

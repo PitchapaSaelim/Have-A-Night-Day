@@ -1,26 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
-class Account(models.Model):
-    GENDER_MALE = 0         
-    GENDER_FEMALE = 1 
-    GENDER_NOT_SPECIFIED = 2
-    GENDER_OTHERS = 3        
-    GENDER_CHOICES = [(GENDER_MALE, 'Male'), 
-                      (GENDER_FEMALE, 'Female'),
-                      (GENDER_NOT_SPECIFIED, 'Not Specified'),
-                      (GENDER_OTHERS, 'Others')] 
-
-    gender = models.IntegerField(choices=GENDER_CHOICES)
-    username = models.OneToOneField(User, on_delete=models.CASCADE)
-    birthdate = models.DateTimeField('birthdate')
+class Eventtime(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    wake_time = models.IntegerField(default=0, help_text='wake time')
+    bed_time = models.IntegerField(default=0, help_text='bedtime')
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='timeevents')
 
     def __str__(self):
-        return self.username  
+        return self.user.username
 
-    # profile_image = ImageField(upload_to='media', blank=True, null=True)
-
-class EventTime(models.Model): 
-    wake_time = models.DateTimeField('wake time')
-    bed_time = models.DateTimeField('bedtime')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='timeevents')
+@receiver(post_save, sender=User)
+def update_user_eventtime(sender, instance, created, **kwargs):
+    if created:
+        Eventtime.objects.create(user=instance)
+    instance.eventtime.save()

@@ -12,7 +12,6 @@ urlpatterns = [
     path('editprofile/', views.editprofile, name='editprofile'),
     path('calculator2/', views.calculate2_view, name='calculator2'),
     path('calculator3/', views.calculate3_view, name='calculator3'),
-    path('logout/', views.logout_view, name='logout')
-
-
+    path('logout/', views.logout_view, name='logout'),
+    path('eventtime/', views.sleep_data, name='sleep_data')
 ]
