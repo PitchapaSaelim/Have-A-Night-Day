@@ -35,7 +35,6 @@ class Eventtime(models.Model):
         sleep_data = f"{get_hr_bed_data}.{get_min_bed_data} hours"
         return sleep_data
 
-
 @receiver(post_save, sender=User)
 def update_user_eventtime(sender, instance, created, **kwargs):
     if created:
