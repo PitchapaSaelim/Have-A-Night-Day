@@ -1,7 +1,172 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        {% include 'navbar.html' %}
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Essential JS 2 TypeScript Components" />
+        <meta name="author" content="Syncfusion" />
+        <link href="//cdn.syncfusion.com/ej2/fabric.css" rel="stylesheet" />
 
+        <style>
+            .button {
+                text-decoration: none;
+                margin:60px auto;
+                margin-bottom: 60px;
+                cursor: pointer;
+                outline: none;
+                background: #2F576E;
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                border-radius: 12px;
+                display: block;
+                color: #fff;
+                font-weight: 400;
+                text-align: center;
+                white-space: nowrap;
+                user-select: none;
+                border: 1px solid transparent;
+                padding: .375rem .75rem;
+                font-size: 18px;
+                line-height: 1.5;
+                transition-property: color, background-color, border-color, box-shadow;
+                transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
+                transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+                transition-delay: 0s, 0s, 0s, 0s;
+                width: 150px;
+                height: 40px;
+            }
+            body .button {
+                font-family: Rubik Mono One;
+                margin-bottom: 0px;
+            }
+            .container {
+                margin-top : 80px;
+                text-align: center;
+                font-family: Rubik Mono One;
+            }
+            img.profile {
+                width: 120px;
+                margin: 30px;
+            }
+            a.button {
+                margin-top: 40px;
+                background-color: #526273;
+                margin-bottom: 40px;
+                text-decoration: none;
+                color: white;
+            }
+            a.button:hover{
+                text-decoration:none;
+                color: white;
+            }
+            .data {
+                display: block;
+                margin: 20px;
+            }
+            h4 {
+                display: inline;
+                margin: 40px;
+            }
+            h4.info {
+                background-color: #FCF2E1;
+                padding: 8px 100px;
+                border-radius: 10px;
+            }
+            #control-container {
+                padding: 0px !important;
+            }
+
+            .disease {
+                display: inline;
+            }
+            .dis {
+                display: block;
+                margin-top: 60px;
+            }
+            .chart_div {
+                background-color: black;
+            }
+
+        </style>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+          google.charts.load("current", {packages:["corechart"]});
+          google.charts.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Dinosaur', 'Length'],
+              ['Acrocanthosaurus (top-spined lizard)', 12.2],
+              ['Albertosaurus (Alberta lizard)', 9.1],
+              ['Allosaurus (other lizard)', 12.2],
+              ['Apatosaurus (deceptive lizard)', 22.9],
+              ['Archaeopteryx (ancient wing)', 0.9],
+              ['Argentinosaurus (Argentina lizard)', 36.6],
+              ['Baryonyx (heavy claws)', 9.1],
+              ['Brachiosaurus (arm lizard)', 30.5],
+              ['Ceratosaurus (horned lizard)', 6.1],
+              ['Coelophysis (hollow form)', 2.7],
+              ['Compsognathus (elegant jaw)', 0.9],
+              ['Deinonychus (terrible claw)', 2.7],
+              ['Diplodocus (double beam)', 27.1],
+              ['Dromicelomimus (emu mimic)', 3.4],
+              ['Gallimimus (fowl mimic)', 5.5],
+              ['Mamenchisaurus (Mamenchi lizard)', 21.0],
+              ['Megalosaurus (big lizard)', 7.9],
+              ['Microvenator (small hunter)', 1.2],
+              ['Ornithomimus (bird mimic)', 4.6],
+              ['Oviraptor (egg robber)', 1.5],
+              ['Plateosaurus (flat lizard)', 7.9],
+              ['Sauronithoides (narrow-clawed lizard)', 2.0],
+              ['Seismosaurus (tremor lizard)', 45.7],
+              ['Spinosaurus (spiny lizard)', 12.2],
+              ['Supersaurus (super lizard)', 30.5],
+              ['Tyrannosaurus (tyrant lizard)', 15.2],
+              ['Ultrasaurus (ultra lizard)', 30.5],
+              ['Velociraptor (swift robber)', 1.8]]);
+    
+              var options = {
+                title: 'Country Populations',
+                legend: { position: 'none' },
+                colors: ['green'],
+            };
+    
+            var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+            chart.draw(data, options);
+          }
+        </script>
+
+    </head>
+    <body >
+        {% include 'navbar.html' %}
+        <div class="container">
+            <a><img class="profile" src="..\..\..\..\static\user\images\profile.png" alt="logo" ></a>
+            <div class="data">
+                <h4>Name</h4>
+                <h4 class="info">{{user.first_name}}</h4>
+            </div>
+            <div class="data">
+                <h4>Surname</h4>
+                <h4 class="info">{{user.last_name}}</h4>
+            </div>
+            <div class="data">
+                <h4>Birthday</h4>
+                <h4 class="info">{{user.profile.birth_date}}</h4>
+            </div>
+            <div class="data">
+                <h4>Gender</h4>
+                <h4 class="info">{{user.profile.gender}}</h4>
+            </div>
+            <a class="button" href="{% url 'sleep_time_management:editprofile'%}">Edit</a>
+
+            <h1>Graph</h1>
+            <div id="chart_div" style="width: 900px; height: 500px;" ></div>
+            
+            <div class="dis">
+                <h4>disease that is at risk of</h4> 
+                <a class="button disease" href="{% url 'sleep_time_management:information'%}">More detail!</a>
+            </div>
+            
+        </div>
+        
     </body>
 </html>
