@@ -85,16 +85,16 @@
         <div class="container">
             <h1>You should try to fall asleep at one of the following times</h1>
  
-            <form>
-                <select id="mySelect">
+            <form action="{% url 'sleep_time_management:bed_sleep_data'%}" method="POST">
+            {% csrf_token %}
+                <select id="mySelect" name="bed_event_time">
                     {% for time in waketime %}
                     <option value="{{time}}">{{time}}</option>
                     {% endfor %}
                 </select>
-              </form>
-
-            <button type="submit" class="button" onclick="change_text()">submit</button>
-
+                <button type="submit" class="button" onclick="change_text()">submit</button>
+            </form>
+            
             <p id="p1"></p> 
         </div>
 
