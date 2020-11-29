@@ -70,6 +70,7 @@
                 background-color: #FCF2E1;
                 padding: 8px 100px;
                 border-radius: 10px;
+                margin-left: 0px;
             }
             #control-container {
                 padding: 0px !important;
@@ -84,6 +85,16 @@
             }
             .chart_div {
                 background-color: black;
+            }
+
+            div#chart_div {
+                margin: auto;
+            }
+            
+            div.alldata {
+                text-align: left;
+                margin: auto;
+                width: fit-content;
             }
 
         </style>
@@ -140,26 +151,31 @@
         {% include 'navbar.html' %}
         <div class="container">
             <a><img class="profile" src="..\..\..\..\static\user\images\profile.png" alt="logo" ></a>
-            <div class="data">
+            <div class="alldata">
+                <div class="data">
                 <h4>Name</h4>
                 <h4 class="info">{{user.first_name}}</h4>
+                </div>
+                <div class="data">
+                    <h4>Surname</h4>
+                    <h4 class="info">{{user.last_name}}</h4>
+                </div>
+                <div class="data">
+                    <h4>Birthday</h4>
+                    <h4 class="info">{{user.profile.birth_date}}</h4>
+                </div>
+                <div class="data">
+                    <h4>Gender</h4>
+                    <h4 class="info">{{user.profile.gender}}</h4>
+                </div>
             </div>
-            <div class="data">
-                <h4>Surname</h4>
-                <h4 class="info">{{user.last_name}}</h4>
-            </div>
-            <div class="data">
-                <h4>Birthday</h4>
-                <h4 class="info">{{user.profile.birth_date}}</h4>
-            </div>
-            <div class="data">
-                <h4>Gender</h4>
-                <h4 class="info">{{user.profile.gender}}</h4>
-            </div>
+            
             <a class="button" href="{% url 'sleep_time_management:editprofile'%}">Edit</a>
 
-            <h1>Graph</h1>
-            <div id="chart_div" style="width: 900px; height: 500px;" ></div>
+            <div class="graph">
+                <h1>Graph</h1>
+                <div class="graph" id="chart_div" style="width: 900px; height: 500px;" ></div>
+            </div>
             
             <div class="dis">
                 <h4>disease that is at risk of</h4> 
