@@ -14,5 +14,6 @@ urlpatterns = [
     path('calculator3/', views.calculate3_view, name='calculator3'),
     path('logout/', views.logout_view, name='logout'),
     path('bedeventtime/', views.bed_sleep_data, name='bed_sleep_data'),
-    path('wakeeventtime/', views.wake_sleep_data, name='wake_sleep_data')
+    path('wakeeventtime/', views.wake_sleep_data, name='wake_sleep_data'),
+    path('sleep-chart/', views.sleep_chart, name='sleep-chart')
 ]
