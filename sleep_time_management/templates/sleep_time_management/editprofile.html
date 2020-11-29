@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        {% include 'navbar.html' %}
-    </body>
+{% load crispy_forms_tags %}
+<body>
+    <form method='POST' enctype="multipart/form-data">
+        {%csrf_token%}
+        {{u_form|crispy}}
+        {{p_form|crispy}}
+        <button type='submit'>Update</button>
+    </form>
+</body>
 </html>
