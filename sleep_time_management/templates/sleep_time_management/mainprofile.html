@@ -58,19 +58,26 @@
                 text-decoration:none;
                 color: white;
             }
-            .data {
-                display: block;
-                margin: 20px;
+            div.data {
+                display: inline-block;
+                text-align: left;
+            }
+            div.infomation {
+                display: inline-block;
+                
             }
             h4 {
-                display: inline;
-                margin: 40px;
+                display: block;
             }
             h4.info {
                 background-color: #FCF2E1;
                 padding: 8px 100px;
                 border-radius: 10px;
-                margin-left: 0px;
+                margin: 16px;
+            }
+            h4.text {
+                margin: 10px;
+                margin-bottom: revert;
             }
             #control-container {
                 padding: 0px !important;
@@ -92,7 +99,6 @@
             }
             
             div.alldata {
-                text-align: left;
                 margin: auto;
                 width: fit-content;
             }
@@ -153,24 +159,23 @@
             <a><img class="profile" src="..\..\..\..\static\user\images\profile.png" alt="logo" ></a>
             <div class="alldata">
                 <div class="data">
-                <h4>Name</h4>
-                <h4 class="info">{{user.first_name}}</h4>
+                    <h4 class="text">Name</h4>
+                    <h4 class="text">Surname</h4>
+                    <h4 class="text">E-mail address</h4>
+                    <h4 class="text">Birthday</h4>
+                    <h4 class="text">Gender</h4>
                 </div>
-                <div class="data">
-                    <h4>Surname</h4>
+                <div class="infomation">
+                    <h4 class="info">{{user.first_name}}</h4>
                     <h4 class="info">{{user.last_name}}</h4>
-                </div>
-                <div class="data">
-                    <h4>Birthday</h4>
+                    <h4 class="info">{{user.email}}</h4>
                     <h4 class="info">{{user.profile.birth_date}}</h4>
-                </div>
-                <div class="data">
-                    <h4>Gender</h4>
                     <h4 class="info">{{user.profile.gender}}</h4>
                 </div>
             </div>
             
-            <a class="button" href="{% url 'sleep_time_management:editprofile'%}">Edit</a>
+            
+            <a class="button" href="{% url 'sleep_time_management:editprofile'%}">Edit profile</a>
 
             <div class="graph">
                 <h1>Graph</h1>
