@@ -7,6 +7,11 @@ from .forms import UserUpdateForm, ProfileUpdateForm
 
 from .models import Eventtime
 
+from django.shortcuts import render
+from django.db.models import Sum
+from django.http import JsonResponse
+
+
 @login_required
 def home(request):
     return render(request, 'sleep_time_management/home.html')
@@ -136,3 +141,18 @@ def wake_sleep_data(request):
     wake_event_time.sleep_data = wake_event_time.calculate_sleep_bed_data()
     wake_event_time.save()
     return render(request, 'sleep_time_management/home.html')
+
+def sleep_chart(request):
+    labels = ['day 1']
+    data = []
+
+    queryset = Eventtime.objects.filter(user = request.user).values('sleep_data')
+    # data.append(queryset['sleep_data'])
+    for i in queryset :
+        time = i['sleep_data'].split(" ")
+        data.append(float(time[0]))        
+
+    return JsonResponse(data={
+        'labels': labels,
+        'data': data,
+    })
