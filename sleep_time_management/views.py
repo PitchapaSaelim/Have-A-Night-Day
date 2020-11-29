@@ -3,11 +3,14 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
+from .forms import UserUpdateForm, ProfileUpdateForm
+
 from .models import Eventtime
 
 from django.shortcuts import render
 from django.db.models import Sum
 from django.http import JsonResponse
+
 
 @login_required
 def home(request):
@@ -26,7 +29,26 @@ def mainprofile(request):
 
 @login_required
 def editprofile(request):
-    return render(request, 'sleep_time_management/editprofile.html')
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST,
+                                   request.FILES,
+                                   instance=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            return render(request, 'sleep_time_management/mainprofile.html')
+
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
+
+    context = {
+        'u_form': u_form,
+        'p_form': p_form
+    }
+
+    return render(request, 'sleep_time_management/editprofile.html',context)
 
 
 @login_required
