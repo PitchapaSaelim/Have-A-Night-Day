@@ -12,7 +12,8 @@ install:
   - pip install -r requirements.txt
 
 # script to run tests. Script can have many commands, one per line.
-script: 
+script:
+  - python manage.py collectstatic
   - coverage run manage.py test 
 
 after_script:
