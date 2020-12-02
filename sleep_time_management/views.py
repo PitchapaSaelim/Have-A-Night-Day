@@ -111,6 +111,9 @@ def calculate3_view(request):
                 hour = '00'
             if (minute == 0):
                 minute = '00'
+            elif (int(minute)<10):
+                minute = str(minute)
+                minute = '0'+minute
             if(int(hour) > 24):
                 hour = hour - 24
             listtime.append(f"{hour}:{minute}")
