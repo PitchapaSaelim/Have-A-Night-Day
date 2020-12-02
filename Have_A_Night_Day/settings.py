@@ -26,7 +26,7 @@ SECRET_KEY = 'k%t1_dyeajnb!0ie_-swes=2*wnma6jz0o$h1&!g$!zuindg8n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['haveanightday.herokuapp.com']
 
 
 # Application definition
@@ -135,3 +135,7 @@ STATIC_URL = '/static/'
 LOGIN_REQUIRED_URL = 'sleep_time_management:home'
 
 LOGIN_URL = 'login'
+
+if '/app' in os.environ['HOME']:
+    import django_heroku
+    django_heroku.settings(locals())
