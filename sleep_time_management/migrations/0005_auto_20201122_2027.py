@@ -10,14 +10,4 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(
-            model_name='eventtime',
-            name='bed_time',
-            field=models.IntegerField(default=0, help_text='bedtime'),
-        ),
-        migrations.AlterField(
-            model_name='eventtime',
-            name='wake_time',
-            field=models.IntegerField(default=0, help_text='wake time'),
-        ),
     ]
