@@ -19,6 +19,8 @@ Iteration
 * [Iteration 5 Plan](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Iteration-5-Plan) and [Task Board](https://github.com/PitchapaSaelim/Have-A-Night-Day/projects/5)
 * [Iteration 6 Plan](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Iteration-6-Plan) and [Task Board](https://github.com/PitchapaSaelim/Have-A-Night-Day/projects/6)
 * [Iteration 7 Plan](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Iteration-7-Plan) and [Task Board](https://github.com/PitchapaSaelim/Have-A-Night-Day/projects/7)
+* [Iteration 8 Plan](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Iteration-8-Plan) and [Task Board](https://github.com/PitchapaSaelim/Have-A-Night-Day/projects/8)
+* [Iteration 9 Plan](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Iteration-9-Plan) and [Task Board](https://github.com/PitchapaSaelim/Have-A-Night-Day/projects/9)
 
 Code Review
 * [Procedure](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Procedure)
