@@ -78,7 +78,33 @@ class AuthorModelTest(TestCase):
         response = self.client.get(reverse("sleep_time_management:information"))
         self.assertEqual(response.status_code, 302)
 
-    
+    def test_access_to_home_page_if_user_logout(self):
+        """Test if user can see home page if user logout.""" 
+        self.client.login(username='Saiparn',password='@Parn123')
+        self.client.logout()
+        response = self.client.get(reverse("sleep_time_management:home"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_access_to_main_profile_if_user_logout(self):
+        """Test if user can see main profile page if user logout.""" 
+        self.client.login(username='Saiparn',password='@Parn123')
+        self.client.logout()
+        response = self.client.get(reverse("sleep_time_management:mainprofile"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_access_to_edit_profile_if_user_logout(self):
+        """Test if user can see edit profile page if user logout."""
+        self.client.login(username='Saiparn',password='@Parn123')
+        self.client.logout()
+        response = self.client.get(reverse("sleep_time_management:editprofile"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_access_to_information_if_user_logout(self):
+        """Test if user can see information page if user logout."""
+        self.client.login(username='Saiparn',password='@Parn123')
+        self.client.logout()
+        response = self.client.get(reverse("sleep_time_management:information"))
+        self.assertEqual(response.status_code, 302)
 
 
     
