@@ -1,3 +1,4 @@
+
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
@@ -18,23 +19,45 @@ class Eventtime(models.Model):
         return self.user.username
 
     def calculate_sleep_wake_data(self):
-        if self.wake_time < self.bed_event_time:
-            self.wake_time += 24*60
-        get_wake_data = self.wake_time - self.bed_event_time
-        get_hr_wake_data = get_wake_data//60
-        get_min_wake_data = get_wake_data % 60
-        sleep_data = f"{get_hr_wake_data}.{get_min_wake_data} hours"
+        # if self.wake_time < self.bed_event_time:
+        #     self.wake_time += 24*60
+        # get_wake_data = self.wake_time - self.bed_event_time
+        # get_hr_wake_data = get_wake_data//60
+        # get_min_wake_data = get_wake_data % 60
+        # sleep_data = f"{get_hr_wake_data}.{get_min_wake_data} hours"
+        sleep_data = calculate_sleep_wake(self.wake_time,self.bed_event_time)
         return sleep_data
+
+
 
     def calculate_sleep_bed_data(self):
-        if self.wake_event_time < self.bed_time:
-            self.wake_event_time += 24*60
-        get_bed_data = self.wake_event_time - self.bed_time
-        get_hr_bed_data = get_bed_data//60
-        get_min_bed_data = get_bed_data % 60
-        sleep_data = f"{get_hr_bed_data}.{get_min_bed_data} hours"
+        # if self.wake_event_time < self.bed_time:
+        #     self.wake_event_time += 24*60
+        # get_bed_data = self.wake_event_time - self.bed_time
+        # get_hr_bed_data = get_bed_data//60
+        # get_min_bed_data = get_bed_data % 60
+        # sleep_data = f"{get_hr_bed_data}.{get_min_bed_data} hours"
+        sleep_data = calculate_sleep_bed(self.bed_time,self.wake_event_time)
         return sleep_data
 
+def calculate_sleep_wake(waketime,bed_event_time):
+    if waketime < bed_event_time:
+        waketime += 24*60
+    get_wake_data = waketime - bed_event_time
+    get_hr_wake_data = get_wake_data//60
+    get_min_wake_data = get_wake_data % 60
+    sleep_data = f"{get_hr_wake_data}.{get_min_wake_data} hours"
+    return sleep_data
+
+def calculate_sleep_bed(bedtime,wake_event_time):
+    if wake_event_time < bedtime:
+        wake_event_time += 24*60
+    get_bed_data = wake_event_time - bedtime
+    get_hr_bed_data = get_bed_data//60
+    get_min_bed_data = get_bed_data % 60
+    sleep_data = f"{get_hr_bed_data}.{get_min_bed_data} hours"
+    return sleep_data
+    
 @receiver(post_save, sender=User)
 def update_user_eventtime(sender, instance, created, **kwargs):
     if created:
