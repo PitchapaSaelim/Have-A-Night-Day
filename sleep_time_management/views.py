@@ -7,8 +7,6 @@ from .forms import UserUpdateForm, ProfileUpdateForm
 
 from .models import Eventtime
 
-from django.shortcuts import render
-from django.db.models import Sum
 from django.http import JsonResponse
 
 
@@ -48,7 +46,7 @@ def editprofile(request):
         'p_form': p_form
     }
 
-    return render(request, 'sleep_time_management/editprofile.html',context)
+    return render(request, 'sleep_time_management/editprofile.html', context)
 
 
 @login_required
@@ -79,6 +77,7 @@ def calculate2_view(request):
         listtime = calculate_waketime(waketime=waketime)
         return render(request, 'sleep_time_management/calculator2.html', {'waketime': listtime})
 
+
 def calculate_waketime(waketime):
     time = waketime.split(':')
     caltime = (int(time[0])*60)+int(time[1])
@@ -98,6 +97,7 @@ def calculate_waketime(waketime):
             caltime += (24*60)
     return listtime
 
+
 def calculate_sleeptime(sleeptime):
     time = sleeptime.split(':')
     caltime = (int(time[0])*60)+int(time[1])
@@ -110,7 +110,7 @@ def calculate_sleeptime(sleeptime):
             hour = '00'
         if (minute == 0):
             minute = '00'
-        elif (int(minute)<10):
+        elif (int(minute) < 10):
             minute = str(minute)
             minute = '0'+minute
         if(int(hour) > 24):
@@ -127,7 +127,7 @@ def calculate3_view(request):
         bed_time = Eventtime.objects.filter(user=request.user).first()
         bed_time.bed_time = caltime
         bed_time.save()
-        listtime = calculate_sleeptime(sleeptime= sleeptime)
+        listtime = calculate_sleeptime(sleeptime=sleeptime)
         return render(request, 'sleep_time_management/calculator3.html', {'sleeptime': listtime})
 
 
@@ -156,15 +156,16 @@ def wake_sleep_data(request):
     wake_event_time.save()
     return render(request, 'sleep_time_management/home.html')
 
+
 def sleep_chart(request):
     labels = ['day 1']
     data = []
 
-    queryset = Eventtime.objects.filter(user = request.user).values('sleep_data')
+    queryset = Eventtime.objects.filter(user=request.user).values('sleep_data')
     # data.append(queryset['sleep_data'])
-    for i in queryset :
+    for i in queryset:
         time = i['sleep_data'].split(" ")
-        data.append(float(time[0]))        
+        data.append(float(time[0]))
 
     return JsonResponse(data={
         'labels': labels,
