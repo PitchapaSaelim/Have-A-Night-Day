@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+                integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'user/navbar.css' %}">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+                crossorigin="anonymous"></script>
+        <style> 
+        .all-browsers {
+        margin: 0;
+        padding: 5px;
+        background-color: lightgray;
+        }
+
+        .all-browsers > h1, .browser {
+        margin: 10px;
+        padding: 5px;
+        }
+
+        .browser {
+        background: white;
+        }
+
+        .browser > h2, p {
+        margin: 4px;
+        font-size: 90%;
+        }
+
+        footer {
+        text-align: center;
+        padding: 3px;
+        background-color: rgba(255, 255, 255, 0.24);;
+        color: white;
+        display: block;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        }
+
+        p {
+            margin: 10px;
+        }
+        </style>
+    </head>
+    
+    <body>
+        <footer>
+            <p style="color: black;"><b>HAVE A NIGHT DAY</b></p>
+            <p style="color: gray;">Sleep time management web application.</p>
+            <p>About us</p>
+            <p>Contact us</p>
+        </footer>
+    </body>
+</html>
