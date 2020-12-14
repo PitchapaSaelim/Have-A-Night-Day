@@ -10,18 +10,45 @@
                 crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <style>
-
+            .container {
+                margin-top: 100px;
+                background-color: black;
+                padding: 10px;
+                color: white;
+                font-size: large;
+            }
+            .body {
+                text-align: center;
+            }
+            .mail {
+                display: inline;
+            }
+            .info {
+                margin: 20px;
+            }
         </style>
     </head>
 
     <body>
         {% include 'navbar.html' %}
-
+        <div class="container">
+            <p style="border-bottom: 1.5px solid white;"><b style="font-size: 30px;">Contact Us</b></p>
+            <p style="margin-bottom: 45px;">To reach the team at haveanightday.herokuapp.com, please reach out to our e-mail and our e-mail address is as follows:</p> 
+            <div class="info">
+                <i class="fas fa-envelope"></i><p class="mail">panida.ou@ku.th</p>
+            </div>        
+            <div class="info">
+                <i class="fas fa-envelope"></i><p class="mail">phakarat.kh@ku.th</p>
+            </div>   
+            <div class="info">
+                <i class="fas fa-envelope"></i><p class="mail">pitchapa.sae@ku.th</p>
+            </div>   
+        </div>
         
 
-        
-        
         {% include 'footer.html' %}
     </body>
 </html>

@@ -48,6 +48,10 @@
         p {
             margin: 10px;
         }
+        a {
+            margin: 4px;
+            display: block;
+        }
         </style>
     </head>
     
@@ -55,8 +59,8 @@
         <footer>
             <p style="color: black;"><b>HAVE A NIGHT DAY</b></p>
             <p style="color: gray;">Sleep time management web application.</p>
-            <p>About us</p>
-            <p>Contact us</p>
+            <a href="{% url 'sleep_time_management:about_us'%}">About us</a>
+            <a href="{% url 'sleep_time_management:contact_us'%}">Contact us</a>
         </footer>
     </body>
 </html>

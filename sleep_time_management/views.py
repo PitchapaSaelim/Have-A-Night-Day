@@ -62,6 +62,16 @@ def calculator3(request):
 
 
 @login_required
+def about_us(request):
+    return render(request, 'sleep_time_management/aboutus.html')
+
+
+@login_required
+def contact_us(request):
+    return render(request, 'sleep_time_management/contactus.html')
+
+
+@login_required
 def logout_view(request):
     logout(request)
 
