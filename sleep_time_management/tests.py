@@ -28,4 +28,5 @@ class CalculateViewsTest(TestCase):
         sleep_data_from_app = calculate_sleep_bed(120,210)
         self.assertEqual(sleep_data,sleep_data_from_app)
 
+    
 

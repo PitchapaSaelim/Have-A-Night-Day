@@ -33,3 +33,52 @@ class AuthorModelTest(TestCase):
         """Test if the user does not login."""
         with self.assertRaises(AssertionError):
             self.assertIn('_auth_user_id', self.client.session)
+
+    def test_access_to_home_page_with_authenticated_user(self):
+        """Test if authenticated user can see home page."""
+        self.client.login(username='Saiparn',password='@Parn123')  
+        response = self.client.get(reverse("sleep_time_management:home"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_access_to_main_profile_with_authenticated_user(self):
+        """Test if authenticated user can see main profile page."""
+        self.client.login(username='Saiparn',password='@Parn123')  
+        response = self.client.get(reverse("sleep_time_management:mainprofile"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_access_to_edit_profile_with_authenticated_user(self):
+        """Test if authenticated user can see main editprofile page."""
+        self.client.login(username='Saiparn',password='@Parn123')  
+        response = self.client.get(reverse("sleep_time_management:editprofile"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_access_to_information_with_authenticated_user(self):
+        """Test if authenticated user can see information page."""
+        self.client.login(username='Saiparn',password='@Parn123')  
+        response = self.client.get(reverse("sleep_time_management:information"))
+        self.assertEqual(response.status_code, 200)
+    
+    def test_access_to_home_page_with_unauthenticated_user(self):
+        """Test if unauthenticated user can see home page.""" 
+        response = self.client.get(reverse("sleep_time_management:home"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_access_to_main_profile_with_unauthenticated_user(self):
+        """Test if unauthenticated user can see main profile page.""" 
+        response = self.client.get(reverse("sleep_time_management:mainprofile"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_access_to_edit_profile_with_unauthenticated_user(self):
+        """Test if unauthenticated user can see main editprofile page."""  
+        response = self.client.get(reverse("sleep_time_management:editprofile"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_access_to_information_with_unauthenticated_user(self):
+        """Test if unauthenticated user can see information page.""" 
+        response = self.client.get(reverse("sleep_time_management:information"))
+        self.assertEqual(response.status_code, 302)
+
+    
+
+
+    
