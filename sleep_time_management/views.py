@@ -76,22 +76,47 @@ def calculate2_view(request):
         wake_time = Eventtime.objects.filter(user=request.user).first()
         wake_time.wake_time = caltime
         wake_time.save()
-        listtime = []
-        for i in range(6):
-            caltime -= 90
-            if (caltime < 0):
-                caltime += (24*60)
-            hour = caltime//60
-            minute = caltime % 60
-            if (int(minute) < 10 and minute != 0):
-                minute = '0'+str(minute)
-            if (minute == 0):
-                minute = '00'
-            listtime.append(f"{hour}:{minute}")
-            if (hour <= 0):
-                caltime += (24*60)
+        listtime = calculate_waketime(waketime=waketime)
         return render(request, 'sleep_time_management/calculator2.html', {'waketime': listtime})
-        # return render(request,'sleep_time_management/calculator2.html',{'waketime': waketime})
+
+def calculate_waketime(waketime):
+    time = waketime.split(':')
+    caltime = (int(time[0])*60)+int(time[1])
+    listtime = []
+    for i in range(6):
+        caltime -= 90
+        if (caltime < 0):
+            caltime += (24*60)
+        hour = caltime//60
+        minute = caltime % 60
+        if (int(minute) < 10 and minute != 0):
+            minute = '0'+str(minute)
+        if (minute == 0):
+            minute = '00'
+        listtime.append(f"{hour}:{minute}")
+        if (hour <= 0):
+            caltime += (24*60)
+    return listtime
+
+def calculate_sleeptime(sleeptime):
+    time = sleeptime.split(':')
+    caltime = (int(time[0])*60)+int(time[1])
+    listtime = []
+    for i in range(6):
+        caltime += 90
+        hour = caltime//60
+        minute = caltime % 60
+        if (hour == 24):
+            hour = '00'
+        if (minute == 0):
+            minute = '00'
+        elif (int(minute)<10):
+            minute = str(minute)
+            minute = '0'+minute
+        if(int(hour) > 24):
+            hour = hour - 24
+        listtime.append(f"{hour}:{minute}")
+    return listtime
 
 
 def calculate3_view(request):
@@ -102,21 +127,7 @@ def calculate3_view(request):
         bed_time = Eventtime.objects.filter(user=request.user).first()
         bed_time.bed_time = caltime
         bed_time.save()
-        listtime = []
-        for i in range(6):
-            caltime += 90
-            hour = caltime//60
-            minute = caltime % 60
-            if (hour == 24):
-                hour = '00'
-            if (minute == 0):
-                minute = '00'
-            elif (int(minute)<10):
-                minute = str(minute)
-                minute = '0'+minute
-            if(int(hour) > 24):
-                hour = hour - 24
-            listtime.append(f"{hour}:{minute}")
+        listtime = calculate_sleeptime(sleeptime= sleeptime)
         return render(request, 'sleep_time_management/calculator3.html', {'sleeptime': listtime})
 
 
