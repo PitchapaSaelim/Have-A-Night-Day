@@ -1,7 +1,188 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        {% include 'navbar.html' %}
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Essential JS 2 TypeScript Components" />
+        <meta name="author" content="Syncfusion" />
+        <link href="//cdn.syncfusion.com/ej2/fabric.css" rel="stylesheet" />
 
+        <style>
+            .button {
+                text-decoration: none;
+                margin:60px auto;
+                margin-bottom: 60px;
+                cursor: pointer;
+                outline: none;
+                background: #2F576E;
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                border-radius: 12px;
+                display: block;
+                color: #fff;
+                font-weight: 400;
+                text-align: center;
+                white-space: nowrap;
+                user-select: none;
+                border: 1px solid transparent;
+                padding: .375rem .75rem;
+                font-size: 18px;
+                line-height: 1.5;
+                transition-property: color, background-color, border-color, box-shadow;
+                transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
+                transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+                transition-delay: 0s, 0s, 0s, 0s;
+                width: 150px;
+                height: 40px;
+            }
+            body .button {
+                font-family: Rubik Mono One;
+                margin-bottom: 0px;
+            }
+            .container {
+                margin-top : 80px;
+                text-align: center;
+                font-family: Rubik Mono One;
+            }
+            img.profile {
+                width: 120px;
+                margin: 30px;
+            }
+            a.button {
+                margin-top: 40px;
+                background-color: #526273;
+                margin-bottom: 40px;
+                text-decoration: none;
+                color: white;
+            }
+            a.button:hover{
+                text-decoration:none;
+                color: white;
+            }
+            div.data {
+                display: inline-block;
+                text-align: left;
+            }
+            div.infomation {
+                display: inline-block;
+                
+            }
+            h4 {
+                display: block;
+            }
+            h4.info {
+                background-color: #FCF2E1;
+                padding: 8px 100px;
+                border-radius: 10px;
+                margin: 16px;
+            }
+            h4.text {
+                margin: 10px;
+                margin-bottom: revert;
+            }
+            #control-container {
+                padding: 0px !important;
+            }
+
+            .disease {
+                display: inline;
+            }
+            .dis {
+                display: block;
+                margin-top: 60px;
+            }
+            .chart_div {
+                background-color: black;
+            }
+
+            div#chart_div {
+                margin: auto;
+            }
+            
+            div.alldata {
+                margin: auto;
+                width: fit-content;
+            }
+
+        </style>
+
+    </head>
+    <body >
+        {% include 'navbar.html' %}
+        <div class="container">
+            <a><img class="profile" src="..\..\..\..\static\user\images\profile.png" alt="logo" ></a>
+            <div class="alldata">
+                <div class="data">
+                    <h4 class="text">Name</h4>
+                    <h4 class="text">Surname</h4>
+                    <h4 class="text">E-mail address</h4>
+                    <h4 class="text">Birthday</h4>
+                    <h4 class="text">Gender</h4>
+                </div>
+                <div class="infomation">
+                    <h4 class="info">{{user.first_name}}</h4>
+                    <h4 class="info">{{user.last_name}}</h4>
+                    <h4 class="info">{{user.email}}</h4>
+                    <h4 class="info">{{user.profile.birth_date}}</h4>
+                    <h4 class="info">{{user.profile.gender}}</h4>
+                </div>
+            </div>
+            
+            
+            <a class="button" href="{% url 'sleep_time_management:editprofile'%}">Edit profile</a>
+
+            {% block content %}
+                <div class="graph">
+                    <canvas id="sleep-chart" data-url="{% url 'sleep_time_management:sleep-chart' %}"></canvas>
+                </div>
+                <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+                <script>
+
+                    $(function () {
+
+                    var $populationChart = $("#sleep-chart");
+                    $.ajax({
+                        url: $populationChart.data("url"),
+                        success: function (data) {
+
+                        var ctx = $populationChart[0].getContext("2d");
+
+                        new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                            labels: data.labels,
+                            datasets: [{
+                                label: 'hour',
+                                backgroundColor: 'white',
+                                data: data.data
+                            }]          
+                            },
+                            options: {
+                            responsive: true,
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Sleep Bar Chart'
+                            }
+                            }
+                        });
+
+                        }
+                    });
+
+                    });
+
+                </script>
+
+            {% endblock %}
+            <div class="dis">
+                <h4>disease that is at risk of</h4> 
+                <a class="button disease" href="{% url 'sleep_time_management:information'%}">More detail!</a>
+            </div>
+            
+        </div>
+        
     </body>
 </html>

@@ -28,8 +28,8 @@ class Migration(migrations.Migration):
             name='EventTime',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('wake_time', models.DateTimeField(verbose_name='wake time')),
-                ('bed_time', models.DateTimeField(verbose_name='bedtime')),
+                ('wake_time', models.IntegerField(default=0, help_text='bedtime')),
+                ('bed_time', models.IntegerField(default=0, help_text='wake time')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='timeevents', to='sleep_time_management.user')),
             ],
         ),

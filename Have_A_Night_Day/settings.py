@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'k%t1_dyeajnb!0ie_-swes=2*wnma6jz0o$h1&!g$!zuindg8n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['haveanightday.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -122,6 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # # Base url to serve media files
@@ -133,3 +135,7 @@ STATIC_URL = '/static/'
 LOGIN_REQUIRED_URL = 'sleep_time_management:home'
 
 LOGIN_URL = 'login'
+
+if '/app' in os.environ['HOME']:
+    import django_heroku
+    django_heroku.settings(locals())

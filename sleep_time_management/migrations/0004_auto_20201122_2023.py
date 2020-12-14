@@ -15,17 +15,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterField(
             model_name='eventtime',
-            name='bed_time',
-            field=models.DateTimeField(default=0, help_text='bedtime'),
-        ),
-        migrations.AlterField(
-            model_name='eventtime',
             name='user',
             field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
-        ),
-        migrations.AlterField(
-            model_name='eventtime',
-            name='wake_time',
-            field=models.DateTimeField(default=0, help_text='wake time'),
         ),
     ]

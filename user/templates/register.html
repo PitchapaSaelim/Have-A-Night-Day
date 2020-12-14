@@ -69,23 +69,6 @@
             <form method="POST">
                 {% csrf_token %}
                 {{form|crispy}}
-                
-                {% comment %} <h6><label for="fname">First name*</label><br></h6>
-                <input type="text" id="fname" name="fname" value="" required><br>
-                <h6><label for="sname">Surname*</label><br></h6>
-                <input type="text" id="lname" name="lname" value="" required><br> {% endcomment %}
-                {% comment %} <form action="/action_page.php">
-                    <label for="birthday">Birthday:</label>
-                    <input type="date" id="birthday" name="birthday"> {% endcomment %}
-                {% comment %} <h6>Gender:<br></h6> {% endcomment %}
-                {% comment %} <input type="radio" id="male" name="gender" value="male" >
-                <label for="male"><p>Male</p></label><br>
-                <input type="radio" id="female" name="gender" value="female" >
-                <label for="female"><p>Female</p></label><br>
-                <input type="radio" id="notspec" name="gender" value="notspec" >
-                <label for="notspec"><p>Not specified</p></label><br>
-                <input type="radio" id="other" name="gender" value="other" >
-                <label for="other"><p>Other</p></label><br>  {% endcomment %}
                 <button class="btn btn-success" type="submit">Create account</button>
             <form>
 
