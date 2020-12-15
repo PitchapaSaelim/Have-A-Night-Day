@@ -39,24 +39,28 @@
         background-color: rgba(255, 255, 255, 0.24);;
         color: white;
         display: block;
-        position: fixed;
-        left: 0;
-        bottom: 0;
+        position: absolute;
         width: 100%;
+        left: 0;
         }
 
         p {
             margin: 10px;
         }
+        a {
+            margin: 4px;
+            display: block;
+        }
         </style>
     </head>
     
     <body>
-        <footer>
-            <p style="color: black;"><b>HAVE A NIGHT DAY</b></p>
-            <p style="color: gray;">Sleep time management web application.</p>
-            <p>About us</p>
-            <p>Contact us</p>
-        </footer>
+        
     </body>
+    <footer>
+        <p style="color: black;"><b>HAVE A NIGHT DAY</b></p>
+        <p style="color: gray;">Sleep time management web application.</p>
+        <a href="{% url 'sleep_time_management:about_us'%}">About us</a>
+        <a href="{% url 'sleep_time_management:contact_us'%}">Contact us</a>
+    </footer>
 </html>
