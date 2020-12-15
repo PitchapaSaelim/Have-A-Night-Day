@@ -1,3 +1,4 @@
+from sleep_time_management.models import calculate_sleep_bed, calculate_sleep_wake
 from sleep_time_management.views import calculate_sleeptime, calculate_waketime
 from django.test import TestCase
 
@@ -14,3 +15,18 @@ class CalculateViewsTest(TestCase):
         wake_up_time = ['23:30','1:00','2:30','4:00','5:30','7:00']
         wake_up_time_from_app = calculate_sleeptime('22:00')
         self.assertListEqual(wake_up_time,wake_up_time_from_app)
+
+    def test_sleep_time_data_wake_time(self):
+        """Test when user input wake up time and select bed time, application can calculate sleep data correctly"""
+        sleep_data = '7.30 hours'
+        sleep_data_from_app = calculate_sleep_wake(360,1350)
+        self.assertEqual(sleep_data,sleep_data_from_app)
+
+    def test_sleep_time_data_bed_time(self):
+        """Test when user input bed time and select wake up time, application can calculate sleep data correctly"""
+        sleep_data = '1.30 hours'
+        sleep_data_from_app = calculate_sleep_bed(120,210)
+        self.assertEqual(sleep_data,sleep_data_from_app)
+
+    
+
