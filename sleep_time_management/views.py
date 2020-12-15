@@ -99,7 +99,6 @@ def get_disease_list(age, gender, average_sleep):
             disease.append("Stroke")
     if hour < 6:
         disease.append("Colorectal cancer")
-        disease.append("Colon cancer")
     if hour > 8:
         disease.append("Hypersomnia")
     return disease
