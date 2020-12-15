@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'k%t1_dyeajnb!0ie_-swes=2*wnma6jz0o$h1&!g$!zuindg8n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['haveanightday.herokuapp.com','127.0.0.1']
 
@@ -136,6 +136,6 @@ LOGIN_REQUIRED_URL = 'sleep_time_management:home'
 
 LOGIN_URL = 'login'
 
-if '/app' in os.environ['HOME']:
-    import django_heroku
-    django_heroku.settings(locals())
+# if '/app' in os.environ['HOME']:
+#     import django_heroku
+#     django_heroku.settings(locals())
