@@ -1,7 +1,776 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+        font-family: "Lato", sans-serif;
+        }
+
+        .sidebar {
+        height: 100%;
+        width: 85px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        transition: 0.5s;
+        overflow-x: hidden;
+        padding-top: 60px;
+        white-space: nowrap;
+        }
+
+        .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #818181;
+        display: block;
+        }
+        .sidebar h3 {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #818181;
+        display: block;
+        }
+
+        .sidebar a:hover {
+        color: #f1f1f1;
+        border: none !important;
+        }
+
+        main .sidebar {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        }
+
+        .material-icons,
+        .icon-text {
+        vertical-align: middle;
+        }
+
+        .material-icons {
+        padding-bottom: 3px;
+        margin-right: 30px;
+        }
+
+        #main {
+            padding: 16px;
+            margin-left: 200px;
+            transition: margin-left 0.5s;
+        }
+
+        .container {
+            margin-top: 80px;
+        }
+
+        .text {
+            margin-left: 50px;
+            margin-right: 0px;
+        }
+        h3 {
+            border-bottom: 1.5px solid black;
+        }
+        .disorders {
+            width: 1100px;
+            margin-bottom: 20px;
+        }
+
+        .dis {
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-height: 450px) {
+        .sidebar {
+            padding-top: 9px;
+        }
+        .sidebar a {
+            font-size: 18px;
+        }
+        }
+        </style>
+        <script>
+            var mini = true;
+            function toggleSidebar() {
+            if (mini) {
+                console.log("opening sidebar");
+                document.getElementById("mySidebar").style.width = "320px";
+                document.getElementById("main").style.marginLeft = "320px";
+                this.mini = false;
+            } else {
+                console.log("closing sidebar");
+                document.getElementById("mySidebar").style.width = "85px";
+                document.getElementById("main").style.marginLeft = "200px";
+                this.mini = true;
+            }
+            }
+        </script>
+    </head>
     <body>
         {% include 'navbar.html' %}
+        <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+            <h3><i class="material-icons">airline_seat_individual_suite</i><span class="icon-text">Sleep topics</span></h3>
+            <a href="#Healthy"><span class="text">Healthy Sleep Tips</span></a>
+            <a href="#How"><span class="text">How Sleep Works</span></a>
+            <a href="#Recommended"><span class="text">Recommended Sleep Times</span></a>
+            <a href="#Snoring"><span class="text">Snoring</span></a>
+            <a href="#Dreams"><span class="text">Dreams</span></a>
+            <a href="#COVID"><span class="text">COVID-19 and Sleep</span></a>
+            <a href="#Physical"><span class="text">Physical Health</span></a>
+
+            <h3><i class="material-icons">enhanced_encryption</i><span class="icon-text"></span>Sleep disorders</h3></span>
+            <a href="#Hyper"><span class="text">Hypertension</span></a>
+            <a href="#Breast"><span class="text">Breast cancer risk</span></a>
+            <a href="#Coronary"><span class="text">Coronary heart disease (CHD)</span></a>
+            <a href="#Stroke"><span class="text">Stroke</span></a>
+            <a href="#Diabetes"><span class="text">Diabetes mellitus (DM)</span></a>
+            <a href="#Colorectal"><span class="text">Colorectal cancer</span></a>
+            <a href="#Hypersomnia"><span class="text">Hypersomnia</span></a>
+            <a href="#Depression"><span class="text">Depression</span></a>
+            <a href="#Infertility"><span class="text">Infertility</span></a>
+            <a href="#REM"><span class="text">REM Sleep Disorder</span></a><br>
+
+            <h3><i class="material-icons">alarm_add</i><span class="icon-text"></span>Sleep solutions</span></h3>
+            <a href="#Anti"><span class="text">Anti-Snoring</span></a>
+            <a href="#Melatonin"><span class="text">Melatonin and Sleep</span></a>
+        </div>
+          
+        <div class="container" id="main">
+            <div class="dis" id="Healthy">
+                <img class="disorders" src="..\..\..\..\static\user\images\health_sleep_tips.jpg" alt="topics" >
+                <p>It’s well-established that sleep is essential to our physical and mental health. But despite its importance, a troubling percentage of people find themselves regularly deprived of quality sleep and are notably sleepy during the day.</p>
+                <p>Though there’s a wide range of causes and types of sleeping problems, expert consensus points to a handful of concrete steps that promote more restful sleep. Organizations like the CDC1, the National Institutes of Health, the National Institute on Aging, and the American Academy of Family Physicians point to the same fundamental tips for getting better rest.</p>
+                <p>For many people, trying to implement all these strategies can be overwhelming. But remember that it’s not all-or-nothing; you can start with small changes and work your way up toward healthier sleep habits, also known as sleep hygiene.</p>
+                <p>To make these sleep hygiene improvements more approachable, we’ve broken them into four categories:</p>
+                <ul>
+                    <li>Creating a Sleep-Inducing Bedroom</li>
+                    <li>Optimizing Your Sleep Schedule</li>
+                    <li>Crafting a Pre-Bed time Routine</li>
+                    <li>Fostering Pro-Sleep Habits During the Day</li>
+                </ul>
+                <p>In each category, you can find specific actions that you can take to make it easier to fall asleep, stay asleep, and wake up well-rested.</p>
+                <h3><b>Creating a Sleep-Inducing Bedroom</b></h3>
+                <p>An essential tip to help fall asleep quickly and easily is to make your bedroom a place of comfort and relaxation. Though this might seem obvious, it’s often overlooked, contributing to difficulties getting to sleep and sleeping through the night.</p>
+                <h3><b>Optimizing Your Sleep Schedule</b></h3>
+                <p>Taking control of your daily sleep schedule is a powerful step toward getting better sleep. To start harnessing your schedule for your benefit, try implementing these four strategies:</p>
+                <ul>
+                    <li><b>Set a Fixed Wake-Up Time:</b> It’s close to impossible for your body to get accustomed to a healthy sleep routine if you’re constantly waking up at different times. Pick a wake-up time and stick with it, even on weekends or other days when you would otherwise be tempted to sleep in.</li>
+                    <li><b>Budget Time for Sleep:</b> If you want to make sure that you’re getting the recommended amount of sleep each night, then you need to build that time into your schedule. Considering your fixed wake-up time, work backwards and identify a target bedtime. Whenever possible, give yourself extra time before bed to wind down and get ready for sleep.</li>
+                    <li><b>Be Careful With Naps:</b> To sleep better at night, it’s important to use caution with naps. If you nap for too long or too late in the day, it can throw off your sleep schedule and make it harder to get to sleep when you want to. The best time to nap is shortly after lunch in the early afternoon, and the best nap length is around 20 minutes.</li>
+                    <li><b>Adjust Your Schedule Gradually:</b>When you need to change your sleep schedule, it’s best to make adjustments little-by-little and over time with a maximum difference of 1-2 hours per night. This allows your body to get used to the changes so that following your new schedule is more sustainable.</li>
+                </ul>
+                <h3><b>Crafting a Pre-Bed Routine</b></h3>
+                <p>If you have a hard time falling asleep, it’s natural to think that the problem starts when you lie down in bed. In reality, though, the lead-up to bedtime plays a crucial role in preparing you to fall asleep quickly and effortlessly.</p>
+                <h3><b>Fostering Pro-Sleep Habits During the Day</b></h3>
+                <p>Setting the table for high-quality sleep is an all-day affair. A handful of steps that you can take during the day can pave the way for better sleep at night.</p>
+                <ul>
+                    <li>See the Light of Day</li>
+                    <li>Find Time to Move</li>
+                    <li>Monitor Your Caffeine Intake</li>
+                    <il>Be Mindful of Alcohol</il>
+                    <li>Don’t Eat Too Late</li>
+                    <li>Don’t Smoke</li>
+                    <li>Reserve Your Bed for Sleep and Sex Only</li>
+                </ul>
+                <h3><b>If You Can’t Fall Asleep</b></h3>
+                <p>Whether it’s when you first get into bed or after waking up in the middle of the night, you may find it hard to drift off to sleep. These tips help explain what to do when you can’t sleep:</p>
+                <ul>
+                    <li><b>Try Relaxation Techniques:</b> Don’t focus on trying to fall asleep; instead, focus on just trying to relax. Controlled breathing, mindfulness meditation, progressive muscle relaxation, and guided imagery are examples of relaxation methods that can help ease you into sleep.</li>
+                    <li><b>Don’t Stew in Bed:</b> You want to avoid a connection in your mind between your bed and frustration from sleeplessness. This means that if you’ve spent around 20 minutes in bed without being able to fall asleep, get out of bed and do something relaxing in low light. Avoid checking the time during this time. Try to get your mind off of sleep for at least a few minutes before returning to bed.</li>
+                    <li><b>Experiment WIth Different Methods:</b> Sleeping problems can be complex and what works for one person may not work for someone else. As a result, it makes sense to try different approaches to see what works for you. Just remember that it can take some time for new methods to take effect, so give your changes time to kick in before assuming that they aren’t working for you.</li>
+                    <li><b>Keep a Sleep Diary:</b> A daily sleep journal can help you keep track of how well you’re sleeping and identify factors that might be helping or hurting your sleep. If you’re testing out a new sleep schedule or other sleep hygiene changes, the sleep diary can help document how well it’s working.</li>
+                    <li><b>Talk With a Doctor:</b> A doctor is in the best position to offer detailed advice for people with serious difficulties sleeping. Talk with your doctor if you find that your sleep problems are worsening, persisting over the long-term, affecting your health and safety (such as from excessive daytime sleepiness), or if they occur alongside other unexplained health problems.</li>
+                </ul>
+            </div>
+
+            <div class="dis" id="How">
+                <img class="disorders" src="..\..\..\..\static\user\images\messageImage_1608071140063.jpg" alt="topics" >
+                <p>Even after decades of research, the exact reason why we sleep remains one of the most enduring and intriguing mysteries in health science. To try to get to the bottom of this question, experts analyze how sleep works and what happens when we don’t get enough sleep.</p>
+                <p>Studies demonstrate that sleep is incredibly complex and has effects on virtually all systems of the body. Multiple parts of the brain are involved in the processes of producing hormones and chemicals that regulate sleep and wakefulness.</p>
+                <p>While there is much that is still to be learned about the intricacies of how sleep works, existing research sheds light on the mechanics of what happens in the brain and body during sleep. This knowledge reveals how sleep is connected to numerous elements of physical, emotional, and mental health and provides insights about how people can get better sleep.</p>
+                <h3><b>What Happens When You Sleep?</b></h3>
+                <p>Within a minute after falling asleep, notable changes start to affect both the brain and body. Body temperature drops, brain activity ramps down, and heart rate and respiration slow as well. Not surprisingly, the body’s energy expenditure is lower during sleep.</p>
+                <p>It is important to recognize, though, that what happens during sleep is dynamic. Over the course of one night, you actually progress through multiple sleep cycles, each of which lasts between 70 and 120 minutes and is composed of separate sleep stages. These sleep stages are fundamental to how sleep works.</p>
+                <h3><b>What Are the Sleep Stages?</b></h3>
+                <p>There are four stages of sleep divided into two categories. The first three stages fall into the category of non-REM (rapid eye movement) sleep. The fourth stage is REM sleep.</p>
+                <img class="disorders" src="..\..\..\..\static\user\images\table.jpg" alt="topics" >
+                <p>In stage 1, you’ve just dozed off and started transitioning to stage 2, which involves further slowing of activity in the brain and body. It’s much easier to be awoken during these early stages of the sleep cycle.</p>
+                <p>Stage 3 is the deepest part of NREM sleep. In this stage, your muscles and body relax even more, and brain waves show a clear pattern of slowed activity that is markedly different from waking brain activity. It is believed that deep sleep plays an important role in recuperation of the body as well as effective thinking and memory.</p>
+                <p>Stage 4 is the only stage of REM sleep. During this time, brain activity picks up significantly, and most of the body — except the eyes and breathing muscles — experience temporary paralysis. Although dreams can happen during any stage, the most intense dreaming takes place during REM sleep.</p>
+                <p>The REM sleep stage is believed to be essential for the brain, enabling key functions like memory and learning. As the night goes on, it’s normal to spend a greater percentage of time in REM sleep with most of it occurring in the second half of the night.</p>
+                <p>The structure of a person’s sleep stages and cycles is known as their sleep architecture. While deep sleep and REM sleep involve more profound changes in activity levels, experts believe that each stage plays a part in a healthy sleep architecture that generates quality sleep.</p>
+                <h3><b>How Does the Body Regulate Sleep?</b></h3>
+                <p>The body regulates sleep with two key drivers: sleep-wake homeostasis and the circadian alerting system.</p>
+                <ul>
+                    <li><b>Sleep-wake homeostasis.</b>This technical term describes something most of us know implicitly from experience: the longer you’re awake, the more you feel a need to sleep. This is because of the homeostatic sleep drive, the body’s self-regulating system in which pressure to sleep builds up based on how long you’ve been awake. This same drive causes you to sleep longer or more deeply after a period of insufficient sleep.</li>
+                    <li><b>The circadian alerting system.</b> Part of your body’s biological clock, circadian rhythms last roughly 24 hours and play a central role in numerous biological processes, including sleep. Light exposure is the biggest influence on circadian rhythms, encouraging wakefulness during the day and sleepiness at night.</li>
+                </ul>
+                <h3><p>What Chemicals and Hormones Regulate Sleep?</p></h3>
+                <p>Numerous chemicals and hormones are involved in the mechanics of sleep-wake homeostasis and the circadian alerting system. Shifting between wakefulness and sleep creates changes in thousands of neurons in the brain and a complex signaling system that generates specific reactions in the body.</p>
+                <p>To date, there is much that is still unknown about the intricate processes that control sleep, but researchers have discovered some substances that appear to be important cogs in the machinery of sleep.</p>
+                <p>A chemical called adenosine is believed to play a central role in sleep-wake homeostasis. Adenosine builds up when we’re awake and appears to increase sleep pressure. Caffeine, on the other hand, suppresses adenosine, which may explain part of how it promotes wakefulness.</p>
+                <p>Neurotransmitters are chemicals that send signals within the nervous system to activate or deactivate certain cells. Examples of neurotransmitters involved in promoting wakefulness or sleep include GABA, acetylcholine, orexin, and serotonin.</p>
+                <p>Hormones also play an integral role in signaling and regulating sleep-wake states. Melatonin, which promotes sleep and is naturally produced as light exposure decreases, is one of the best known hormones related to sleep. Other important sleep-related hormones include adrenaline, cortisol, and norepinephrine. Sleep can also affect the production of vital hormones, such as growth hormone as well as leptin and ghrelin that regulate appetite, which may exert influence on sleep-wake homeostasis and circadian rhythms.</p>
+                <p>The function of these chemicals and hormones may be different in some individuals based on their genetics, which is why certain sleep disorders may run in families. Environment and lifestyle choices may also influence the chemical and hormonal signaling responsible for sleep.</p>
+                <h3><b>Why is Sleep Important?</b></h3>
+                <p>While even experts haven’t reached a consensus explanation for why we sleep, numerous indicators support the view that it serves an essential biological function.</p>
+                <p>From an evolutionary perspective, the fact that sleep exists in almost all animal species — despite the fact that it creates vulnerability and takes time away from feeding or procreating — is a strong indication that it is fundamental to well-being.</p>
+                <p>In humans, sleep appears to be critical to both physical and mental development in babies, children, and young adults. In adults, a lack of sleep has been associated with a wide range of negative health consequences including cardiovascular problems, a weakened immune system, higher risk of obesity and type II diabetes, impaired thinking and memory, and mental health problems like depression and anxiety.</p>
+                <p>These diverse ramifications of sleep deprivation offer strong support to the view that sleep doesn’t have just one biological purpose but in fact, through its complexity, is an important contributor to the proper functioning of nearly all of the systems of the body.</p>
+            </div>
+
+            <div class="dis" id="Recommended">
+                <h1><b>How Much Sleep Do We Really Need?</b></h1>
+                <p>Scientific research makes clear that sleep is essential at any age. Sleep powers the mind, restores the body, and fortifies virtually every system in the body. But how much sleep do we really need in order to get these benefits?</p>
+                <p>National Sleep Foundation guidelines advise that healthy adults need between 7 and 9 hours of sleep per night. Babies, young children, and teens need even more sleep to enable their growth and development. People over 65 should also get 7 to 8 hours per night.</p>
+                <p>Knowing the general recommendations for how much sleep you need is a first step. Then It’s important to reflect on your individual needs based on factors like your activity level and overall health. And finally, of course, it’s necessary to apply healthy sleep tips so that you can actually get the full night’s sleep that’s recommended.</p>
+                <h3><b>How Much Sleep is Recommended for Each Age Group?</b></h3>
+                <p>The National Sleep Foundation’s recommendations for nightly sleep are broken down into nine age groups.</p>
+                <img class="disorders" src="..\..\..\..\static\user\images\table2.jpg" alt="disorders" >
+                <p>In each group, the guidelines present a recommended range of nightly sleep duration for healthy individuals. In some cases, sleeping an hour more or less than the general range may be acceptable based on a person’s circumstances.</p>
+                <h3><b>How Much Sleep Do You Need?</b></h3>
+                <p>The National Sleep Foundation guidelines serve as a rule-of-thumb for how much sleep children and adults need while acknowledging that the ideal amount of sleep can vary from person to person.</p>
+                <p>For that reason, the guidelines list a range of hours for each age group. The recommendations also acknowledge that, for some people with unique circumstances, there’s some wiggle room on either side of the range for “acceptable,” though still not optimal, amount of sleep.</p>
+                <h3><b>How Were the National Sleep Foundation Recommendations Created?</b></h3>
+                <p>To create these recommendations, the National Sleep Foundation convened an expert panel of 18 people from different fields of science and medicine. The members of the panel reviewed hundreds of validated research studies about sleep duration and key health outcomes like cardiovascular disease, depression, pain, and diabetes.</p>
+                <p>After studying the evidence, the panel used several rounds of voting and discussion to narrow down the ranges for the amount of sleep needed at different ages. In total, this process took over nine months to complete.</p>
+                <h3><b>Improve Your Sleep Today: Make Sleep a Priority</b></h3>
+                <p>Once you have a nightly goal based on the hours of sleep that you need, it’s time to start planning for how to make that a reality.</p>
+                <p>Start by making sleep a priority in your schedule. This means budgeting for the hours you need so that work or social activities don’t trade off with sleep. While cutting sleep short may be tempting in the moment, it doesn’t pay off because sleep is essential to being at your best both mentally and physically.</p>
+                <p>Improving your sleep hygiene, which includes your bedroom setting and sleep-related habits, is an established way to get better rest. Examples of sleep hygiene improvements include:</p>
+                <ul>
+                    <li>Sticking to the same sleep schedule every day, even on weekends.</li>
+                    <li>Practicing a relaxing pre-bed routine to make it easier to fall asleep quickly.</li>
+                    <li>Choosing a mattress that is supportive and comfortable and outfitting it with quality pillows and bedding.</li>
+                    <li>Minimizing potential disruptions from light and sound while optimizing your bedroom temperature and aroma.</li>
+                    <li>Disconnecting from electronic devices like mobile phones and laptops for a half-hour or more before bed.</li>
+                    <li>Carefully monitoring your intake of caffeine and alcohol and trying to avoid consuming them in the hours before bed.</li>
+                </ul>
+            </div>
+
+            <div class="dis" id="Snoring">
+                <img class="disorders" src="..\..\..\..\static\user\images\snoring.jpg" alt="topics" >
+                <p>Snoring is estimated to affect 57% of men and 40% of women in the United States. It even occurs in up to 27% of children.</p>
+                <p>These statistics demonstrate snoring is widespread, but its severity and health implications can vary. Snoring can be light, occasional, and unconcerning, or it may be the sign of a serious underlying sleep-related breathing disorder.</p>
+                <p>Knowing the basics about snoring — what causes it, when it’s dangerous, how to treat it, and how to cope with it — can facilitate better health and eliminate a common cause of sleep complaints.</p>
+                <h3><b>What Causes Snoring?</b></h3>
+                <p>Snoring is caused by the rattling and vibration of tissues near the airway in the back of the throat. During sleep, the muscles loosen, narrowing the airway, and as we inhale and exhale, the moving air causes the tissue to flutter and make noise like a flag in a breeze.</p>
+                <p>Some people are more prone to snoring because of the size and shape of the muscle and tissues in their neck. In other cases, excess relaxing of the tissue or narrowing of the airway can lead to snoring. Examples of risk factors that contribute to a higher risk of snoring include:</p>
+                <ul>
+                    <li>Obesity</li>
+                    <li>Alcohol consumption</li>
+                    <li>Use of sedative medications</li>
+                    <li>Chronic nasal congestion</li>
+                    <li>Large tonsils, tongue, or soft palate</li>
+                    <li>Deviated septum or nasal polyps</li>
+                    <li>Jaw that is small or set-back</li>
+                    <li>Pregnancy</li>
+                </ul>
+                <p>Though people of any age, including children, can snore, it is more common in older people. Men snore more often than women.</p>
+                <h3><b>What’s the Difference Between Snoring and Sleep Apnea?</b></h3>
+                <p>Obstructive sleep apnea (OSA) is a breathing disorder in which the airway gets blocked or collapsed during sleep, causing repeated lapses in breath.</p>
+                <p>Snoring is one of the most common symptoms of OSA, but not all people who snore have OSA. OSA-related snoring tends to be loud and sound as if a person is choking, snorting, or gasping. OSA disturbs sleep and often disrupts the balance of oxygen and carbon dioxide in the body. More mild snoring, often called primary snoring, occurs frequently but doesn’t provoke these other effects.</p>
+                <h3><b>Is Snoring Dangerous?</b></h3>
+                <p>Whether snoring is dangerous depends on its type, severity, and frequency.</p>
+                <ul>
+                    <li><b>Light, infrequent snoring</b> is normal and doesn’t require medical testing or treatment. Its main impact is on a bed partner or roommate who may be bothered by the occasional noise.</li>
+                    <li><b>Primary snoring</b> occurs more than three nights per week. Because of its frequency, it is more disruptive to bed partners; however, it is not usually seen as a health concern unless there are signs of sleep disruptions or sleep apnea, in which case diagnostic tests may be necessary.</li>
+                    <li><b>OSA-associated snoring</b> is more worrisome from a health perspective. If OSA goes without treatment, it can have major implications for a person’s sleep and overall health. Unchecked OSA is associated with dangerous daytime drowsiness, and serious health conditions including cardiovascular issues, high blood pressure, diabetes, stroke, and depression.</li>
+                </ul>
+                <h3><b>When Should You See a Doctor About Snoring?</b></h3>
+                <p>Many instances of snoring are benign, but it’s important to talk with a doctor if there are signs of potential sleep apnea:</p>
+                <ul>
+                    <li>Snoring that occurs three or more times per week</li>
+                    <li>Very loud or bothersome snoring</li>
+                    <li>Snoring with gasping, choking, or snorting sounds</li>
+                    <li>Obesity or recent weight gain</li>
+                    <li>Daytime drowsiness</li>
+                    <li>Lack of focus or mental sharpness</li>
+                    <li>Morning headaches and congestion</li>
+                    <li>High blood pressure</li>
+                    <li>Nighttime teeth grinding (bruxism)</li>
+                    <li>Frequent nighttime urination (nocturia)</li>
+                </ul>
+                <p>If you have noticed any of these signs, it’s important to address the issue with a doctor who can determine if additional testing or treatment is necessary.</p>
+                <h3><b>How Do I Know if I’m Snoring When I Sleep Alone?</b></h3>
+                <p>Unless someone else tells them, most people who snore aren’t aware of it, and this is part of why sleep apnea is underdiagnosed.</p>
+                <p>If you sleep alone, your best bet is to set up a recording device. It could be an old-school tape recorder or one of many smartphone apps, but the apps have the advantage of analyzing sound patterns for you to detect likely episodes of snoring. It’s best to record for multiple nights since snoring may not occur every night. That being said, apps do not aid in the diagnosis of OSA.</p>
+                <p>If recording isn’t in the cards, be on the lookout for other red flags related to disrupted sleep such as noticeable daytime sleepiness, fatigue, problems with attention or thinking, or unexplained mood changes.</p>
+                <h3><b>What Treatments Can Help Stop Snoring?</b></h3>
+                <p>Treatment depends on the nature of the snoring and the types of problems it causes.</p>
+                <p>For people with infrequent or primary snoring, treatment may not be necessary unless it is disturbing a person’s sleep or the sleep of someone they live with. In those cases, treatments tend to be simpler and less invasive. People with sleep apnea usually need more involved treatment.</p>
+                <p>Types of treatments include lifestyle changes, anti-snoring mouthpieces, mouth exercises, continuous, auto, or bi-level positive airway pressure (CPAP, APAP, or BiPAP) devices, and surgery. A person’s physician is in the best position to describe pros and cons of any treatment in their specific case.</p>
+                <h3><b>Lifestyle Changes</b></h3>
+                <p>Lifestyle changes can help stop snoring, and in some cases, other treatments may not be necessary. Even when other treatments are prescribed, lifestyle changes are often still recommended. Examples of these changes include:</p>
+                <ul>
+                    <li><b>Maintaining a healthy weight:</b> Being overweight or obese are critical risk factors for snoring and sleep apnea, so keeping a healthy weight can be an important step against snoring.</li>
+                    <li><b>Limiting use of alcohol and sedatives:</b> Alcohol is a frequent promoter of snoring, and sedative medications can trigger snoring as well.</li>
+                    <li><b>Adjusting your sleeping position:</b> Sleeping on your back makes it easier for your airway to become obstructed. It may take time to get used to a different position, but it can be a helpful change. Specialty devices may help, or some experts recommend sewing a tennis ball into the back of a shirt so that you can’t revert to sleeping on your back.</li>
+                    <li><b>Raising the head of your bed:</b> Elevating the top part of your bed with risers, a wedge pillow, or an adjustable frame may reduce snoring. For this to work, it’s important to raise the whole mattress and not just use more pillows.</li>
+                    <li><b>Reducing nasal congestion: </b>Taking steps to eliminate allergies or other sources of nasal congestion can combat snoring. Breathing strips that go over the nose may help open your nasal passages during the night, as well as internal nasal expanders.</li>
+                </ul>
+            </div>
+            
+            <div class="dis" id="Dreams">
+                <img class="disorders" src="..\..\..\..\static\user\images\messageImage_1608115904192.jpg" alt="topics" >
+                <p>Dreams are one of the most fascinating and mystifying aspects of sleep. Since Sigmund Freud helped draw attention to the potential importance of dreams in the late 19th century, considerable research has worked to unravel both the neuroscience and psychology of dreams.</p>
+                <p>Despite this advancing scientific knowledge, there is much that remains unknown about both sleep and dreams. Even the most fundamental question — why do we dream at all? — is still subject to significant debate.</p>
+                <p>While everyone dreams, the content of those dreams and their effect on sleep can vary dramatically from person to person. Even though there’s no simple explanation for the meaning and purpose of dreams, it’s helpful to understand the basics of dreams, the potential impact of nightmares, and steps that you can take to sleep better with sweet dreams.</p>
+                <h3><b>What Are Dreams?</b></h3>
+                <p>Dreams are images, thoughts, or feelings that occur during sleep. Visual imagery is the most common, but dreams can involve all of the senses. Some people dream in color while others dream in black and white, and people who are blind tend to have more dream components related to sound, taste, and smell.</p>
+                <p>Studies have revealed diverse types of dream content, but some typical characteristics of dreaming include:</p>
+                <ul>
+                    <li>It has a first-person perspective.</li>
+                    <li>It is involuntary.</li>
+                    <li>The content may be illogical or even incoherent.</li>
+                    <li>The content includes other people who interact with the dreamer and one another.</li>
+                    <li>It provokes strong emotions.</li>
+                    <li>Elements of waking life are incorporated into content.</li>
+                </ul>
+                <p>Although these features are not universal, they are found at least to some extent in most normal dreams.</p>
+                <h3><b>Why Do We Dream?</b></h3>
+                <p>Debate continues among sleep experts about why we dream. Different theories about the purpose of dreaming include:</p>
+                <ul>
+                    <li><b>Building memory: </b>Dreaming has been associated with consolidation of memory, which suggests that dreaming may serve an important cognitive function of strengthening memory and informational recall.</li>
+                    <li><b>Processing emotion: </b>The ability to engage with and rehearse feelings in different imagined contexts may be part of the brain’s method for managing emotions.</li>
+                    <li><b>Mental housekeeping: </b>Periods of dreaming could be the brain’s way of “straightening up,” clearing away partial, erroneous, or unnecessary information.</li>
+                    <li><b>Instant replay: </b>Dream content may be a form of distorted instant replay in which recent events are reviewed and analyzed.</li>
+                    <li><b>Incidental brain activity: </b>This view holds that dreaming is just a by-product of sleep that has no essential purpose or meaning.</li>
+                </ul>
+                <p>Experts in the fields of neuroscience and psychology continue to conduct experiments to discover what is happening in the brain during sleep, but even with ongoing research, it may be impossible to conclusively prove any theory for why we dream.</p>
+                <h3><b>Do Dreams Have Meaning?</b></h3>
+                <p>How to interpret dreams, and whether they have meaning at all, are matters of considerable controversy. While some psychologists have argued that dreams provide insight into a person’s psyche or everyday life, others find their content to be too inconsistent or bewildering to reliably deliver meaning.</p>
+                <p>Virtually all experts acknowledge that dreams can involve content that ties back to waking experiences although the content may be changed or misrepresented. For example, in describing dreams, people often reference people who they recognize clearly even if their appearance is distorted in the dream.</p>
+                <p>The meaning of real-life details appearing in dreams, though, is far from settled. The “continuity hypothesis” in dream research holds that dreams and waking life are intertwined with one another and thus involve overlapping themes and content. The “discontinuity hypothesis,” on the other hand, sees thinking during dreams and wakefulness as structurally distinct.</p>
+                <p>While analysis of dreams may be a component of personal or psychological self-reflection, it’s hard to state, based on the existing evidence, that there is a definitive method for interpreting and understanding the meaning of dreams in waking, everyday life.</p>
+                <h3><b>Do Dreams Affect Sleep?</b></h3>
+                <p>In most cases, dreams don’t affect sleep. Dreaming is part of healthy sleep and is generally considered to be completely normal and without any negative effects on sleep.</p>
+                <p>Nightmares are the exception. Because nightmares involve awakenings, they can become problematic if they occur frequently. Distressing dreams may cause a person to avoid sleep, leading to insufficient sleep. When they do sleep, the prior sleep deprivation can induce a REM sleep rebound that actually worsens nightmares. This negative cycle can cause some people with frequent nightmares to experience insomnia as a chronic sleep problem.</p>
+                <p>For this reason, people who have nightmares more than once a week, have fragmented sleep, or have daytime sleepiness or changes to their thinking or mood should talk with a doctor. A doctor can review these symptoms to identify the potential causes and treatments of their sleeping problem.</p>
+                <h3><b>How Can You Stop Nightmares?</b></h3>
+                <p>People with frequent nightmares that disturb sleep should talk with a doctor who can determine if they have nightmare disorder or any other condition affecting their sleep quality. Treatment for nightmare disorder often includes talk therapy that attempts to counteract negative thinking, stress, and anxiety that can worsen nightmares.</p>
+                <p>Many types of talk therapy attempt to reduce worries or fears, including those that can arise in nightmares. This type of exposure or desensitization therapy helps many patients reframe their emotional reaction to negative imagery since trying to simply suppress negative thoughts may exacerbate nightmares.</p>
+                <p>Another step in trying to reduce nightmares is to improve sleep hygiene, which includes both sleep-related habits and the bedroom environment. Healthy sleep hygiene can make your nightly sleep more predictable and may help you sleep soundly through the night even if you have bad dreams. Examples of healthy sleep tips include:</p>
+                <ul>
+                    <li><b>Follow a stable sleep schedule: </b>Keep a steady schedule every day, including on weekends or other days when you don’t have to wake up at a certain time.</li>
+                    <li><b>Choose pre-bed content carefully: </b>Avoid scary, distressing, or stimulating content in the hours before bed since it may provoke negative thoughts during sleep.</li>
+                    <li><b>Wind down each night:</b>Exercising during the day can help you sleep better at night. In the evening, try to allow your mind and body to calmly relax before bed such as with light stretching, deep breathing, or other relaxation techniques.</li>
+                    <li><b>Limit alcohol and caffeine: </b>Drinking alcohol can cause more concentrated REM sleep later in the night, heightening the risk of nightmares. Caffeine is a stimulant that can throw off your sleep schedule and keep your brain wired when you want to doze off.</li>
+                    <li><b>Block out bedroom distractions: </b>Try to foster a sleeping environment that is dark, quiet, smells nice, and has a comfortable temperature. A supportive mattress and pillow can make your bed more inviting and cozy. All of these factors make it easier to feel calm and to prevent unwanted awakenings that can trigger irregular sleep patterns.</li>
+                </ul>
+            </div>
+
+            <div class="dis" id="COVID">
+                <img class="disorders" src="..\..\..\..\static\user\images\covid19.jpg" alt="topics" >
+                <p>The novel coronavirus (also known as COVID-19) has brought the world into uncharted waters. Whole countries are on lockdown, the economy has ground to a halt, and many people are afraid for themselves and their loved ones.</p>
+                <p>With such unprecedented changes coming on so quickly, it’s understandable that the importance of sleep is flying under the radar. But as we adjust to stay-at-home orders and try to remain healthy in a time of COVID-19, focusing on sleeping well offers tremendous benefits.</p>
+                <p>Sleep is critical to physical health and effective functioning of the immune system. It’s also a key promoter of emotional wellness and mental health, helping to beat back stress, depression, and anxiety.</p>
+                <p>Whether you’ve had sleeping problems before COVID-19 or if they’ve only come on recently, there are concrete steps that you can take to improve your sleep during this global pandemic.</p>
+                <h3><b>What Are the Challenges to Sleep During a Pandemic?</b></h3>
+                <p>Millions of people suffered from insomnia before the coronavirus, and unfortunately, the pandemic creates a host of new challenges even for people who previously had no sleeping problems.</p>
+                <p>The coronavirus pandemic doesn’t affect everyone in the same way. Of course, patients with the virus and front-line medical workers face the brunt of the direct impacts of the disease. But as we’ve seen across the world, the consequences have spread far and wide, and pose significant barriers to sleep.</p>
+                <h5><b>Disruption of Daily Life</b></h5>
+                <p>Social distancing, school closures, quarantines, working-from-home: all bring profound changes to normal routines for people of all ages and walks of life.</p>
+                <ul>
+                    <li>It can be difficult to adjust to a new daily schedule or lack of a schedule.</li>
+                    <li>Keeping track of the time, and even the day, can be hard without typical time “anchors” like dropping kids at school, arriving at the office, attending recurring social events, or going to the gym.</li>
+                    <li>Being stuck at home, especially if it has low levels of natural light, may reduce light-based cues for wakefulness and sleep, known as zeitgebers, which are crucial to our circadian rhythm.</li>
+                    <li>If you are not working at the moment or your weekly hours have been decreased due to COVID-19, you may be tempted to oversleep each morning. Sleeping more than seven to eight hours per night can make waking up on time much more difficult, even if you use an alarm. Oversleepers may also feel groggy, irritable and unfocused throughout the day.</li>
+                </ul>
+                <h5><b>Anxiety and Worry</b></h5>
+                <p>Worries abound in the COVID-19 pandemic. Naturally, many people fear catching the coronavirus because they don’t want to get sick or infect other people inadvertently.</p>
+                <p>Most people have close friends or family who are older or in high-risk groups because of preexisting conditions, spurring worries about their health and safety.</p>
+                <p>Economic concerns are affecting nearly everyone as well. As economic activity stalls and job losses mount, it’s normal to worry about income, savings, and making ends meet.</p>
+                <p>There’s still so much unknown about this pandemic — how much the disease will spread, whether hospitals can manage the crisis, how long lockdowns will last, when the economy can recover — and such uncertainty often brings anxiety that disrupts sleep as a racing mind keeps the body tossing and turning.</p>
+                <h5><b>Depression and Isolation</b></h5>
+                <p>This crisis can bring about isolation and depression that may be even worse for people who have a loved one who is sick or has passed away from COVID-19. Grief and depression can be exacerbated by isolation at home, and both are known to have the potential to cause significant sleeping problems.</p>
+                <h5><b>Greater Family and Work Stress</b></h5>
+                <p>Many families are under serious stress as a result of the coronavirus. Canceled trips, isolation from friends, and an abundance of time cooped up at home can place a strain on anyone. Keeping up with work-from-home obligations or managing a house full of children who are accustomed to being at school can pose real problems, generating stress and discord that have been shown to be barriers to sleep.</p>
+                <h5><b>Excess Screen Time</b></h5>
+                <p>Whether it’s checking the news on your phone, joining a Zoom with family, binge-watching Netflix, or putting in extra hours staring at a computer while working-from-home, social distancing can mean a huge increase in screen time.</p>
+                <p>Excess screen time, especially later in the evening, can have a detrimental impact on sleep. Not only can it stimulate the brain in ways that make it hard to wind down, but the blue light from screens can suppress the natural production of melatonin, a hormone that the body makes to help us sleep.</p>
+                <h5><b>Stress-Related Fatigue</b></h5>
+                <p>The chronic stress of living through a pandemic can lead to a host of physical symptoms, including persistent headaches, memory lapses, and digestive problems. Stress-related fatigue is another common side effect. The Mayo Clinic defines fatigue as “a nearly constant state of weariness that develops over time and reduces your energy, motivation and concentration.” Even if you receive an adequate amount of sleep at night, fatigue can still leave you feeling tired and unmotivated in the morning.</p>
+
+                <h3><b>Why is Sleep Important During a Pandemic?</b></h3>
+                <p>Sleep is a critical biological process, and the truth is that it’s always important. When confronting the COVID-19 pandemic, though, sleep becomes even more essential because of its wide-ranging benefits for physical and mental health.</p>
+                <ul>
+                    <li><b>Sleep empowers an effective immune system.</b> Solid nightly rest strengthens our body’s defenses, and studies have even found that lack of sleep can make some vaccines less effective.</li>
+                    <li><b>Sleep heightens brain function.</b> Our mind works better when we get good sleep, contributing to complex thinking, learning, memory, and decision-making. For adults and children adapting to work and school at home, good sleep can help them stay sharp.</li>
+                    <li><b>Sleep enhances mood.</b> Lack of sleep can make a person irritable, drag down their energy level, and cause or worsen feelings of depression.</li>
+                    <li><b>Sleep improves mental health. </b>Besides depression, studies have found that a lack of sleep is linked with mental health conditions like anxiety disorder, bipolar disorder, and Post-Traumatic Stress Disorder (PTSD).</li>
+                </ul>
+                <p>Experts agree that getting consistent, high-quality sleep improves virtually all aspects of health, which is why it is worthy of our attention during the coronavirus pandemic.</p>
+                <h3><b>Our Guidelines to Sleeping Well During the COVID-19 Outbreak</b></h3>
+                <p>In spite of the daunting challenges, there are a handful of steps that can promote better sleep during the coronavirus pandemic.</p>
+                <p>If these efforts don’t pay off immediately, don’t give up. It can take time to stabilize your sleep, and you may find that you need to adapt these suggestions to best fit your specific situation.</p>
+                <h5><b>Set Your Schedule and Routine</b></h5>
+                <p>Establishing a routine can facilitate a sense of normalcy even in abnormal times. It’s easier for your mind and body to acclimate to a consistent sleep schedule, which is why health experts have long recommended avoiding major variation in your daily sleep times.</p>
+                <p>Sleep-specific aspects of your daily schedule should include:</p>
+                <ul>
+                    <li><b>Wake-Up Time:</b> Set your alarm, bypass the snooze button, and have a fixed time to get every day started.</li>
+                    <li><b>Wind-Down Time: </b>This is an important time to relax and get ready for bed. It can involve things like light reading, stretching, and meditating along with preparations for bed like putting on pajamas and brushing your teeth. Given the stress of the coronavirus pandemic, it’s wise to give yourself extra wind-down time each night.</li>
+                    <li><b>Bedtime:</b> Pick a consistent time to actually turn out the lights and try to fall asleep.</li>
+                </ul>
+                <p>In addition to time spent sleeping and getting ready for bed, it can be helpful to incorporate steady routines to provide time cues throughout the day, including:</p>
+                <ul>
+                    <li>Showering and getting dressed even if you aren’t leaving the house.</li>
+                    <li>Eating meals at the same time each day.</li>
+                    <li>Blocking off specific time periods for work and exercise.</li>
+                </ul>
+                <h5><b>Reserve Your Bed For Sleep</b></h5>
+                <p>Sleep experts emphasize the importance of creating an association in your mind between your bed and sleep. For this reason, they recommend that sleep and sex be the only activities that take place in your bed.</p>
+                <p>This means that working-from-home shouldn’t be working-from-bed. It also means avoiding bringing a laptop into bed to watch a movie or series.</p>
+                <p>On any given night, if you find that you’re having a hard time sleeping, don’t spend more than 20 minutes tossing and turning. Instead, get out of bed and do something relaxing in very low light, and then head back to bed to try to fall asleep.</p>
+                <p>Frequently changing your sheets, fluffing your pillows, and making your bed can keep your bed feeling fresh, creating a comfortable and inviting setting to doze off. If you’ve been considering refreshing your bedroom setup with a brand new mattress, sheets, or anything other sleep products that need an upgrade, now might be the time to consider doing so.</p>
+                <h5><b>See the Light</b></h5>
+                <p>Exposure to light plays a crucial role in helping our bodies regulate sleep in a healthy way. As you deal with disruptions to daily life, you may need to take steps so that light-based cues have a positive effect on your circadian rhythm.</p>
+                <ul>
+                    <li>If you can, spend some time outside in natural light. Even if the sun isn’t shining brightly, natural light still has positive effects on circadian rhythm. Many people find outdoor time is most beneficial in the morning, and as an added bonus, it’s an opportunity to get fresh air.</li>
+                    <li>As much as possible, open windows and blinds to let light into your home during the day.</li>
+                    <li>Be mindful of screen time. The blue light produced by electronic devices, such as mobile phones, tablets, and computers, has been found to interfere with the body’s natural sleep-promoting processes. As much as possible, avoid using these devices for an hour before bed. You can also use device settings or special apps that reduce or filter blue light.</li>
+                </ul>
+            </div>
+            
+            <div class="dis" id="Physical">
+                <img class="disorders" src="..\..\..\..\static\user\images\messageImage_1608116141876.jpg" alt="topics" >
+                <p>The relationship between sleep and overall physical health is well-documented. Sleep allows both the body and brain to recover during the night. A good night’s rest ensures you’ll feel refreshed and alert when you wake up in the morning.</p>
+                <p>Sleep deficiency will not only leave you feeling tired, but can increase your risk for a wide range of diseases and health problems. These include obesity, heart disease, high blood pressure, diabetes, and stroke. A lack of sleep also poses a threat to your physical safety. Studies suggest up to 19% of U.S. adults don’t get enough sleep on a regular basis</p>
+                <h3><b>How Does Physical Activity Help You Sleep Better?</b></h3>
+                <p>Sleep plays a vital role in your mental and physical wellbeing. Different processes that occur during sleep help to promote healthy brain activity and maintain good overall health. For children and teenagers, sleep is also key for proper growth and development.</p>
+                <p>Sleep deficiency can interfere with these bodily processes. The term “sleep deficiency” refers to the inability to get enough high-quality sleep. This may occur due to sleep deprivation, or simply not getting enough sleep, or there may be other underlying reasons, such as a sleep disorder or circadian rhythm misalignment. A lack of high-quality sleep means your body has less time to recover during the night. This can also lower your body’s defenses against diseases and medical conditions.</p>
+                <p>The effects of sleep deprivation on physical health include:</p>
+                <ul>
+                    <li><b>Obesity:</b> Studies have found sleep loss can increase your risk of becoming obese. Your body produces and regulates various hormones during sleep. These include ghrelin, which makes you feel hungry, and leptin, which makes you feel full. Lack of sleep can cause your ghrelin levels to increase and leptin levels to decrease, meaning you are more likely to feel excessively hungry  and overeat.</li>
+                    <li><b>Heart Problems:</b>Blood pressure is generally reduced during sleep.  Thus, decreased sleep can lead to a higher daily average blood pressure, which in turn may increase your risk of heart disease and stroke. Inadequate sleep has also been linked to coronary artery calcification, a major predictor for coronary heart disease.</li>
+                    <li><b>Insulin management: </b>Insulin is a natural bodily hormone that regulates your glucose (or blood sugar) level. Sleep deprivation can affect how your body reacts to insulin and cause your glucose level to rise, which in turn puts you at higher risk for developing Type 2 diabetes. Similarly, reduced sleep or poor sleep quality may adversely affect glucose control in known diabetics.</li>
+                    <li><b>Immunohealth:</b> During sleep, there is a peak in the number of certain T-cells, various cytokines, and other important components of your immune system. Not getting enough sleep can affect how the immune system responds to viruses and other infections. Long-term reduction in sleep can also lead to persistent low-level inflammation throughout the body, which underlies many chronic medical conditions.</li>
+                    <li><b>Cognitive Performance:</b> A good night’s sleep can improve your ability to concentrate, be creative, and learn new skills. People who don’t get enough rest often have a hard time paying attention and are more likely to commit errors at work or in school.</li>
+                    <li><b>Memory Consolidation:</b> Sleep is essential for processing memories. During the third non-rapid eye movement stage of your sleep cycle – also known as slow-wave sleep – your brain begins organizing and consolidating memories. The rapid eye movement stage that follows may help to cement these memories. As a result, not getting enough sleep can affect your ability to remember important details.</li>
+                    <li><b>Mood:</b> People who don’t get enough sleep may have a harder time controlling their emotions, making good decisions, and coping with different aspects of daily life. Sleep deficiency can also lead to mental health issues, such as depression and increase one’s risk of suicide.</li>
+                    <li><b>Growth and Development: </b>For children and adolescents, deep sleep triggers the release of hormones that promote healthy growth, increase muscle mass, regulate puberty and fertility, and repair cells and tissues. Children who don’t receive enough sleep may feel angry or sad, struggle with school work, and have a hard time engaging with their peers in positive ways.</li>
+                    <li><b>Safety: Drowsy driving</b> is a major road hazard for U.S. drivers. Sleep deficiency can reduce one’s reaction time and lead to falling asleep behind the wheel. People who don’t get enough sleep are also at higher risk of being involved in a workplace accident.</li>
+                </ul>
+                <p>The amount of sleep you need changes with age. Newborns and infants require as much as 15 to 17 hours of sleep per night, whereas teenagers can usually get by with eight to ten hours. Adults between the ages of 18 and 64 generally need seven to nine hours. After reaching 65, this amount drops slightly to seven or eight hours.</p>
+                <h3><b>The Importance of Sleep Hygiene</b></h3>
+                <p>Sleep hygiene is a catchall term for practices and behaviors that influence sleep quality and duration. It can include bedtime and wake-up routines, as well as your diet, physical activity, and other aspects of daily life.</p>
+                <p>Key components of good sleep hygiene include:</p>
+                <ul>
+                    <li><b>Consistent Sleep Schedule:</b> You should strive to go to bed and get up at the same times each day, including on the weekends and when you’re traveling. Many people find a consistent bedtime routine can help them get to bed on time.</li>
+                    <li><b>Prioritizing Sleep:</b> Adequate sleep can be tough to juggle along with family life, work commitments, and socializing. However, you may need to occasionally forgo these activities in order to get enough rest.</li>
+                    <li><b>Responsible Napping:</b>Napping during the day can greatly interfere with the amount of sleep you get at night. Limit your naps to the morning and early afternoon. You should also avoid napping for longer than 20 minutes, as this can make you feel groggy and unfocused when you wake up.</li>
+                    <li><b>Relaxing Bedroom Environment:</b> Think of your bedroom as a sleep sanctuary. You should take measures to maintain a sleep-friendly bedroom, such as blocking light with thick curtains, using a white noise machine or earplugs to drown out loud noises, and setting your bedroom thermostat to 60 to 67 degrees Fahrenheit (15.6 to 19.4 degrees Celsius), which many experts agree is the ideal temperature for sleep.</li>
+                    <li><b>Healthy Habits:</b> Moderate exercise and a healthy diet can improve your sleep quality and help you sleep longer at night. People who have a hard time getting enough sleep should avoid smoking altogether, and also refrain from drinking alcohol or consuming caffeine in the hours leading up to bed. Dining late in the evening – especially large meals – can negatively impact sleep as well.</li>
+                </ul>
+                <p>If you experience long-term sleep deficiency, you should consider scheduling an appointment with your doctor or another credentialed medical professional. Physicians can provide valuable insights about sleep health and hygiene and, if needed, perform tests to evaluate for a sleep disorder.</p>
+            </div>
+            <div class="dis" id="Hyper">
+                <img class="disorders" src="..\..\..\..\static\user\images\hypertension.JPG" alt="disorders" >
+                <h3><b>Overview</b></h3>
+                <p>High blood pressure is a common condition in which the long-term force of the blood against your artery walls is high enough that it may eventually cause health problems, such as heart disease.</p>
+                <p>Blood pressure is determined both by the amount of blood your heart pumps and the amount of resistance to blood flow in your arteries. The more blood your heart pumps and the narrower your arteries, the higher your blood pressure.</p>
+                <p>You can have high blood pressure (hypertension) for years without any symptoms. Even without symptoms, damage to blood vessels, and your heart continues and can be detected. Uncontrolled high blood pressure increases your risk of serious health problems, including heart attack and stroke.
+                </p>
+                <p>High blood pressure generally develops over many years, and it affects nearly everyone eventually. Fortunately, high blood pressure can be easily detected. And once you know you have high blood pressure, you can work with your doctor to control it.
+                </p>
+                <h3><b>Symptoms</b></h3>
+                <p>Most people with high blood pressure have no signs or symptoms, even if blood pressure readings reach dangerously high levels.
+                </p>
+                <p>A few people with high blood pressure may have headaches, shortness of breath, or nosebleeds, but these signs and symptoms aren't specific and usually don't occur until high blood pressure has reached a severe or life-threatening stage.
+                </p>
+                <h3><b>When to see a doctor</b></h3>
+                <p>You'll likely have your blood pressure taken as part of a routine doctor's appointment.</p>
+                <p>Ask your doctor for a blood pressure reading at least every two years starting at age 18. If you're age 40 or older, or you're 18 to 39 with a high risk of high blood pressure, ask your doctor for a blood pressure reading every year.
+                </p>
+                <p>Blood pressure generally should be checked in both arms to determine if there's a difference. It's important to use an appropriate-sized arm cuff.
+                </p>
+                <p>Your doctor will likely recommend more frequent readings if you've already been diagnosed with high blood pressure or have other risk factors for cardiovascular disease. Children age 3 and older will usually have blood pressure measured as a part of their yearly checkups.</p>
+                <p>If you don't regularly see your doctor, you may be able to get a free blood pressure screening at a health resource fair or other locations in your community. You can also find machines in some stores that will measure your blood pressure for free.</p>
+                <p>Public blood pressure machines, such as those found in pharmacies, may provide helpful information about your blood pressure, but they may have some limitations. The accuracy of these machines depends on several factors, such as a correct cuff size and proper use of the machines. Ask your doctor for advice on using public blood pressure machines.</p>
+            </div>
+
+            <div class="dis" id="Breast">
+                <img class="disorders" src="..\..\..\..\static\user\images\breast-cancer-emabal-hospitals-png-800x400-1.png.jpg" alt="disorders" >
+                <h3><b>Overview</b></h3>
+                <p>Breast cancer is cancer that forms in the cells of the breasts.</p>
+                <p>After skin cancer, breast cancer is the most common cancer diagnosed in women in the United States. Breast cancer can occur in both men and women, but it's far more common in women.</p>
+                <p>Substantial support for breast cancer awareness and research funding has helped created advances in the diagnosis and treatment of breast cancer. Breast cancer survival rates have increased, and the number of deaths associated with this disease is steadily declining, largely due to factors such as earlier detection, a new personalized approach to treatment and a better understanding of the disease.</p>
+                <h3><b>Symptoms</b></h3>
+                <p>Signs and symptoms of breast cancer may include:</p>
+                <ul>
+                    <li>A breast lump or thickening that feels different from the surrounding tissue</li>
+                    <li>Change in the size, shape or appearance of a breast</li>
+                    <li>Changes to the skin over the breast, such as dimpling</li>
+                    <li>A newly inverted nipple</li>
+                    <li>Peeling, scaling, crusting or flaking of the pigmented area of skin surrounding the nipple (areola) or breast skin</li>
+                    <li>Redness or pitting of the skin over your breast, like the skin of an orange</li>
+                </ul>
+                <h3><b>Causes</b></h3>
+                <p>There are two types of high blood pressure.</p>
+                <h3><b>Primary (essential) hypertension</b></h3>
+                <p>For most adults, there's no identifiable cause of high blood pressure. This type of high blood pressure, called primary (essential) hypertension, tends to develop gradually over many years.</p>
+                <h3><b>Secondary hypertension</b></h3>
+                <p>Some people have high blood pressure caused by an underlying condition. This type of high blood pressure, called secondary hypertension, tends to appear suddenly and cause higher blood pressure than does primary hypertension. Various conditions and medications can lead to secondary hypertension, including:</p>
+                <ul>
+                    <li>Obstructive sleep apnea</li>
+                    <li>Kidney problems</li>
+                    <li>Adrenal gland tumors</li>
+                    <li>Thyroid problems</li>
+                    <li>Certain defects you're born with (congenital) in blood vessels</li>
+                    <li>Certain medications, such as birth control pills, cold remedies, decongestants, over-the-counter pain relievers and some prescription drugs</li>
+                    <li>Illegal drugs, such as cocaine and amphetamines</li>
+                </ul>
+            </div>
+            <div class="dis" id="Coronary">
+                <img class="disorders" src="..\..\..\..\static\user\images\coronary.jpg" alt="disorders" >
+                <h3><b>Overview</b></h3>
+                <p>CHD tends to develop when cholesterol builds up on the artery walls, creating plaques. These plaques cause the arteries to narrow, reducing blood flow to the heart. A clot can sometimes obstruct the blood flow, causing serious health problems.</p>
+                <p>Coronary arteries form the network of blood vessels on the surface of the heart that feed it oxygen. If these arteries narrow, the heart may not receive enough oxygen rich blood, especially during physical activity.</p>
+                <h3><b>Symptoms</b></h3>
+                <p>Angina may cause the following feelings across the chest:</p>
+                <ul>
+                    <li>squeezing</li>
+                    <li>pressure</li>
+                    <li>heaviness</li>
+                    <li>tightening</li>
+                    <li>burning</li>
+                    <li>aching</li>
+                </ul>
+                <h3><b>Angina might also cause the following symptoms:</b></h3>
+                <ul>
+                    <li>indigestion</li>
+                    <li>heartburn</li>
+                    <li>weakness</li>
+                    <li>sweating</li>
+                    <li>nausea</li>
+                    <li>cramping</li>
+                </ul>
+                <h3><b>Cause</b></h3>
+                <p>CHD develops as a result of injury or damage to the inner layer of a coronary artery. This damage causes fatty deposits of plaque to build up at the injury site.</p>
+                <p>These deposits consist of cholesterol and other waste products from cells. This buildup is called atherosclerosis.</p>
+                <p>If pieces of plaque break off or rupture, platelets will cluster in the area in an attempt to repair the blood vessel. This cluster can block the artery and reduce or block blood flow, which may lead to a heart attack.</p>
+            </div>
+            <div class="dis" id="Stroke">
+                <img class="disorders" src="..\..\..\..\static\user\images\stroke.jpg" alt="disorders" >
+                <h3><b>Overview</b></h3>
+                <p>A stroke occurs when the blood supply to part of your brain is interrupted or reduced, preventing brain tissue from getting oxygen and nutrients. Brain cells begin to die in minutes.</p>
+                <p>A stroke is a medical emergency, and prompt treatment is crucial. Early action can reduce brain damage and other complications.</p>
+                <p>The good news is that many fewer Americans die of stroke now than in the past. Effective treatments can also help prevent disability from stroke.</p>
+                <h3><b>Symptoms</b></h3>
+                <p>If you or someone you're with may be having a stroke, pay particular attention to the time the symptoms began. Some treatment options are most effective when given soon after a stroke begins.</p>
+                <h3><b>Signs and symptoms of stroke include:</b></h3>
+                <ul>
+                    <li><b>Trouble speaking and understanding what others are saying.</b> You may experience confusion, slur your words or have difficulty understanding speech.</li>
+                    <li><b>Paralysis or numbness of the face, arm or leg.</b>You may develop sudden numbness, weakness or paralysis in your face, arm or leg. This often affects just one side of your body. Try to raise both your arms over your head at the same time. If one arm begins to fall, you may be having a stroke. Also, one side of your mouth may droop when you try to smile.</li>
+                    <li><b>Problems seeing in one or both eyes.</b>You may suddenly have blurred or blackened vision in one or both eyes, or you may see double.</li>
+                    <li><b>Headache.</b>A sudden, severe headache, which may be accompanied by vomiting, dizziness or altered consciousness, may indicate that you're having a stroke.</li>
+                    <li><b>Trouble walking.</b>You may stumble or lose your balance. You may also have sudden dizziness or a loss of coordination.</li>
+                </ul>
+                <h3><b>When to see a doctor</b></h3>
+                <p><b>Seek immediate medical attention</b>if you notice any signs or symptoms of a stroke, even if they seem to come and go or they disappear completely. Think "FAST" and do the following:</p>
+                <ul>
+                    <li><b>Face.</b> Ask the person to smile. Does one side of the face droop?</li>
+                    <li><b>Arms.</b> Ask the person to raise both arms. Does one arm drift downward? Or is one arm unable to rise?</li>
+                    <li><b>Speech.</b> Ask the person to repeat a simple phrase. Is his or her speech slurred or strange?</li>
+                    <li><b>Time.</b> If you observe any of these signs, call 911 or emergency medical help immediately.</li>
+                </ul>
+            <div class="dis" id="Diabetes">
+                <img class="disorders" src="..\..\..\..\static\user\images\diabetesknowledge_1920x1080-lead.jpg" alt="disorders" >
+                <h3><b>Overview</b></h3>
+                <p>Diabetes mellitus is a disease that prevents your body from properly using the energy from the food you eat. Diabetes occurs in one of the following situations:</p>
+                <ul>
+                    <li>The pancreas (an organ behind your stomach) produces little insulin or no insulin at all. Insulin is a naturally occurring hormone, produced by the beta cells of the pancreas, which helps the body use sugar for energy.</li>
+                    <li>The pancreas makes insulin, but the insulin made doesn't work as it should. This condition is called insulin resistance.</li>
+                </ul>
+                <h3><b>Symptoms</b></h3>
+                <p>The symptoms of diabetes include:</p>
+                <ul>
+                    <li>Increased thirst.</li>
+                    <li>Increased hunger (especially after eating).</li>
+                    <li>Dry mouth.</li>
+                    <li>Frequent urination.</li>
+                    <li>Unexplained weight loss (even though you are eating and feel hungry).</li>
+                </ul>
+                <p>Other symptoms include:</p>
+                <ul>
+                    <li>Weak, tired feeling.</li>
+                    <li>Blurred vision.</li>
+                    <li>Numbness or tingling in the hands or feet.</li>
+                    <li>Slow-healing sores or cuts.</li>
+                    <li>Dry and itchy skin.</li>
+                    <li>Frequent yeast infections or urinary tract infections.</li>
+                </ul>
+                <h3>Cause</h3>
+                <p>The causes of diabetes are not known. The following risk factors may increase your chance of getting diabetes:</p>
+                <ul>
+                    <li>Family history of diabetes or a personal history of gestational diabetes.</li>
+                    <li>African-American, Hispanic, Native American, or Asian-American race, Pacific Islander or ethnic background.</li>
+                    <li>Injury to the pancreas (such as infection, tumor, surgery or accident).</li>
+                    <li>Autoimmune disease.</li>
+                    <li>Age (risk increases with age).</li>
+                    <li>Physical stress (such as surgery or illness).</li>
+                </ul>
+            </div>
+            <div class="dis" id="Colorectal">
+                <img class="disorders" src="..\..\..\..\static\user\images\colon.jpg" alt="disorders">
+                <h3><b>Overview</b></h3>
+                <p>Colorectal (bowel) cancer is one of the more common forms of cancer in many countries, including Germany. The name "colorectal cancer" is used to describe bowel cancer that starts in the colon (the large intestine) or the rectum. Cancer of the small intestine is very rare.</p>
+                <p>Colorectal cancer almost always develops from growths called colorectal polyps that form in the lining of the colon. But by no means do all polyps become cancerous – and if a polyp does</p>
+                <p>become cancerous, it takes many years. One way to prevent colorectal cancer is to have a colonoscopy, which also allows doctors to remove polyps.</p>
+                <p>Having colorectal cancer can be a life-changing experience. What happens after the diagnosis has been made will depend on various factors, including the stage of the cancer. In early-stage colorectal cancer, the tumor just needs to be surgically removed. In advanced stages, additional treatments may be considered, such as chemotherapy or radiation therapy.</p>
+                <h3><b>Symptoms</b></h3>
+                <p>Colorectal cancer often doesn't cause any symptoms at first, so it may remain unnoticed for a while. Sometimes it leads to abdominal pain or a change in bowel movements. By this we mean that the frequency of bowel movements or the usual time of day when you go to the toilet may change, or you might start having constipation or diarrhea. Black or very dark stool may be caused by traces of blood and could also be a sign of colorectal cancer. When colorectal cancer has reached a more advanced stage it can also cause weight loss, nausea and loss of appetite.</p>
+                <p>But it's important to keep in mind that these symptoms could have any number of other causes. Most of the time there is no serious underlying condition or the symptoms are signs of another, non-cancerous health problem, such as enlarged hemorrhoids or inflammatory bowel disease.</p>
+                <h3><b>Causes</b></h3>
+                <p>Colorectal cancer arises when cells in the mucous lining of the intestine change (mutate) and then multiply out of control. This growth pushes the cells into surrounding tissue. There are a number of possible causes of these kinds of changes, including pollution or radiation. But they often simply occur by chance. The body’s immune system can normally deal with these malignant cells, but not always. As we grow older, mistakes in cell division increase while the body’s ability to repair these problems decreases. This is why most types of cancer are more common in older people.</p>
+            </div>
+            <div class="dis" id="Hypersomnia">
+                <img class="disorders" src="..\..\..\..\static\user\images\hypersomnia.jpeg.jpg" alt="disorders">
+                <h3><b>Overview</b></h3>
+                <p>Hypersomnia is a condition in which you feel excessive sleepiness during the day. It may occur even after long stretches of sleep. Another name for hypersomnia is excessive daytime sleepiness (EDS).</p>
+                <p>Hypersomnia can be a primary condition or a secondary condition. Secondary hypersomnia is the result of another medical condition. People with hypersomnia have difficulty functioning during the day because they’re frequently tired, which can affect concentration and energy level.</p>
+                <h3><b>Causes</b></h3>
+                <p>Primary hypersomnia is thought to be caused by problems in the brain systems that control sleep and waking functions.</p>
+                <p>Secondary hypersomnia is the result of conditions that cause fatigue or insufficient sleep. For example, sleep apnea can cause hypersomnia because it can cause trouble breathing at night, forcing people to wake up multiple times throughout the night.</p>
+                <p>Some medications can also cause hypersomnia. Frequent drug and alcohol use may trigger sleepiness during the day. Other possible causes are low thyroid function and head injury.</p>
+                <h3><b>Symptoms</b></h3>
+                <p>The main symptom of hypersomnia is constant tiredness. People with hypersomnia may take naps throughout the day without ever relieving drowsiness. They also have difficulty waking from long periods of sleep.</p>
+                <p>Other symptoms of hypersomnia include:</p>
+                <ul>
+                    <li>low energy</li>
+                    <li>irritability</li>
+                    <li>anxiety</li>
+                    <li>loss of appetite</li>
+                    <li>slow thinking or speech</li>
+                    <li>difficulty remembering</li>
+                    <li>Restlessness</li>
+                </ul>
+            </div>
+            <div class="dis" id="Depression">
+                <img class="disorders" src="..\..\..\..\static\user\images\depression.jpg" alt="disorders">
+                <h3><b>Overview</b></h3>
+                <p>Depression (major depressive disorder or clinical depression) is a common but serious mood disorder. It causes severe symptoms that affect how you feel, think, and handle daily activities, such as sleeping, eating, or working.</p>
+                <h3><b>Symptoms</b></h3>
+                <p>you have been experiencing some of the following signs and symptoms most of the day, nearly every day, for at least two weeks, you may be suffering from depression:</p>
+                <ul>
+                    <li>Persistent sad, anxious, or “empty” mood</li>
+                    <li>Feelings of hopelessness, or pessimism</li>
+                    <li>Irritability</li>
+                    <li>Feelings of guilt, worthlessness, or helplessness</li>
+                    <li>Loss of interest or pleasure in hobbies and activities</li>
+                    <li>Decreased energy or fatigue</li>
+                    <li>Moving or talking more slowly</li>
+                    <li>Feeling restless or having trouble sitting still</li>
+                    <li>Difficulty concentrating, remembering, or making decisions</li>
+                    <il>Difficulty sleeping, early-morning awakening, or oversleeping</il>
+                    <li>Appetite and/or weight changes</li>
+                    <li>Thoughts of death or suicide, or suicide attempts</li>
+                    <li>Aches or pains, headaches, cramps, or digestive problems without a clear physical cause and/or that do not ease even with treatment</li>
+                </ul>
+            </div>
+            <div class="dis" id="Infertility">
+                <img class="disorders" src="..\..\..\..\static\user\images\infertility.jpeg.jpg" alt="disorders">
+                <h3><b>Overview</b></h3>
+                <p>Infertility is defined as not being able to get pregnant despite having frequent, unprotected sex for at least a year for most couples.</p>
+                <p>Infertility may result from an issue with either you or your partner, or a combination of factors that prevent pregnancy. Fortunately, there are many safe and effective therapies that significantly improve your chances of getting pregnant.</p>
+                <h3><b>Symptoms</b></h3>
+                <p>The main symptom of infertility is not getting pregnant. There may be no other obvious symptoms. Sometimes, a woman with infertility may have irregular or absent menstrual periods. In some cases, a man with infertility may have some signs of hormonal problems, such as changes in hair growth or sexual function.</p>
+                <p>Most couples will eventually conceive, with or without treatment.</p>
+                <h3><b>When to see a doctor</b></h3>
+                <p>You probably don't need to see a doctor about infertility unless you have been trying regularly to get pregnant for at least one year. Women should talk with a doctor earlier, however, if they:</p>
+                <ul>
+                    <li>Are age 35 or older and have been trying to conceive for six months or longer</li>
+                    <li>Are over age 40</li>
+                    <li>Have irregular or absent periods</li>
+                    <li>Have very painful periods</li>
+                    <li>Have known fertility problems</li>
+                    <li>Have been diagnosed with endometriosis or pelvic inflammatory disease</li>
+                    <li>Have had multiple miscarriages</li>
+                    <li>Have undergone treatment for cancer</li>
+                </ul>
+                <p>Men should talk to a doctor if they have:</p>
+                <ul>
+                    <li>A low sperm count or other problems with sperm</li>
+                    <li>A history of testicular, prostate or sexual problems</li>
+                    <li>Undergone treatment for cancer</li>
+                    <li>Small testicles or swelling in the scrotum</li>
+                    <li>Others in your family with infertility problems</li>
+                </ul>
+            </div>
+            <div class="dis" id="REM">
+                <img class="disorders" src="..\..\..\..\static\user\images\rem.jpg" alt="disorders">
+                <h3><b>Overview</b></h3>
+                <p>Rapid eye movement (REM) sleep behavior disorder is a sleep disorder in which you physically act out vivid, often unpleasant dreams with vocal sounds and sudden, often violent arm and leg movements during REM sleep — sometimes called dream-enacting behavior.</p>
+                <h3><b>Symptoms</b></h3>
+                <p>With REM sleep behavior disorder, instead of experiencing the normal temporary paralysis of your arms and legs (atonia) during REM sleep, you physically act out your dreams.</p>
+                <p>The onset can be gradual or sudden, and episodes may occur occasionally or several times a night. The disorder often worsens with time.</p>
+                <p>Symptoms of REM sleep behavior disorder may include:</p>
+                <ul>
+                    <li>Movement, such as kicking, punching, arm flailing or jumping from bed, in response to action-filled or violent dreams, such as being chased or defending yourself from an attack</li>
+                    <li>Noises, such as talking, laughing, shouting, emotional outcries or even cursing</li>
+                    <li>Being able to recall the dream if you awaken during the episode</li>
+                </ul>
+                <h3><b>Causes</b></h3>
+                <p>Nerve pathways in the brain that prevent muscles from moving are active during normal REM or dreaming sleep, resulting in temporary paralysis of your body. In REM sleep behavior disorder, these pathways no longer work and you may physically act out your dreams.</p>
+            </div>
+
+            <div class="dis" id="Anti">
+                <img class="disorders" src="..\..\..\..\static\user\images\antisnoring.jpg" alt="solutions">
+                <p>Many people (and their partners) lose sleep due to chronic snoring. Snoring normally occurs when your tongue and tissues in your mouth and throat become too relaxed. Air passing through creates vibrations in the tissue, producing the tell-tale snoring sound. Snoring can be highly disruptive to both you and your sleep partner. Heavy snoring may also indicate obstructive sleep apnea (OSA) or another more serious medical condition.</p>
+                <p>Many snorers find relief using mouthpieces designed to reduce snoring episodes. These devices, also called mouthguards, fall into two general categories. Mandibular advancement devices, or MADs, fit inside the mouth and push the lower jaw forward to open up your airway. Tongue retaining devices (TRDs) grip the tongue and prevent it from falling into the back of the throat, which commonly causes snoring for back sleepers. There is no cure for snoring, but using snoring aids such as MADs or TRDs can decrease how much you snore by a significant extent.</p>
+                <p>Below, you’ll find our picks for the best anti-snoring mouthpieces and mouthguards sold today. Each selection is based on brand and product research and testing, as well as experiences from verified MAD and TRD users. This guide also discusses different types of anti-snoring mouthpieces and mouthguards, pros and cons of using these accessories, and additional strategies to minimize snoring for you and your partner.</p>
+            </div>
+
+            <div class="dis" id="Melatonin">
+                <img class="disorders" src="..\..\..\..\static\user\images\melatonin.jpg" alt="solutions">
+                <p>Melatonin, often referred to as the sleep hormone, is a central part of the body’s sleep-wake cycle. Its production increases with evening darkness, promoting healthy sleep and helping to orient our circadian rhythm.</p>
+                <p>The body naturally produces melatonin, but researchers and the public have increasingly taken an interest in external sources of it, such as liquids or capsules, as a way to address sleep difficulties. In the United States, melatonin is sold as a dietary supplement, and a 2012 survey by the National Institutes of Health found it to be one of the most commonly used supplements among both adults and children</p>
+                <p>Studies have found that melatonin can improve sleep in certain cases, but it isn’t for everyone. It is important to be aware of and carefully consider melatonin’s potential benefits and downsides. People who want to use melatonin supplement should also be aware of issues related to dosage and the quality of supplements.</p>
+                <h3><b>What is Melatonin?</b></h3>
+                <p>Melatonin is a natural hormone that is produced by the pineal gland in the brain and then released into the bloodstream. Darkness prompts the pineal gland to start producing melatonin while light causes that production to stop. As a result, melatonin helps regulate circadian rhythm and synchronize our sleep-wake cycle with night and day. In doing so, it facilitates a transition to sleep and promotes consistent, quality rest.</p>
+                <p>Melatonin created within the body is known as endogenous melatonin, but the hormone can also be produced externally. Exogenous melatonin is normally made synthetically in a laboratory and, as a dietary supplement, is most often sold as a pill, capsule, chewable, or liquid.</p>
+                <h3><b>Can Melatonin Supplements Improve Sleep?</b></h3>
+                <p>It is well-established that melatonin produced by the body plays a fundamental role in getting quality sleep, so it’s natural to consider whether melatonin supplements can be used to address sleeping difficulties.</p>
+                <p>Research to date has shown that melatonin supplements may be useful in certain situations for both adults and children.</p>
+                <h5><b>Melatonin in Adults</b></h5>
+                <p>In adults, research studies have found the clearest potential benefits from melatonin are for people who have sleeping problems related to Delayed Sleep-Wake Phase Disorder (DSWPD) and jet lag.</p>
+                <p>DSWPD is a circadian rhythm disorder in which a person’s sleep schedule is shifted later, often by a matter of hours. For people with this “night owl” schedule, it can be hard to get enough sleep if they have obligations, such as work or school, that force them to wake up early in the morning. Studies have indicated that low doses of melatonin taken before the desired bedtime can help people with DSWPD adjust their sleep cycle forward.</p>
+                <p>Jet lag can occur when a person travels rapidly across multiple time zones, such as on an intercontinental flight, because their body’s internal clock becomes misaligned with the local day-night cycle. Evidence from small research studies points to melatonin supplements as potentially helping to reset the sleep-wake cycle and improve sleep in people with jet lag.</p>
+                <p>Shift workers — people who work during the night — often struggle with sleep difficulties related to a misaligned circadian rhythm. Studies of melatonin in shift workers have had inconclusive results, although some people report a benefit.</p>
+                <p>There is debate about whether melatonin is beneficial in otherwise healthy adults who have insomnia, a persistent condition marked by trouble falling asleep or staying asleep. The existing research is not conclusive. Some experts reviewing it find some evidence in favor of melatonin while organizations like the American Academy of Sleep Medicine (AASM) have concluded that there is not sufficient scientific support for melatonin in reducing insomnia.</p>
+                <p>For most adults, melatonin has few notable side effects, so even when its benefits may not be clearly established, some people with sleeping problems may be inclined to try it. The best practice is to consult a doctor and have an in-depth conversation about the benefits and risks before taking melatonin.</p>
+                <h5><b>Melatonin in Children</b></h5>
+                <p>Melatonin may be helpful in children with sleeping problems, but experts generally agree that more research is needed to understand its optimal use in young people.</p>
+                <p>Almost all reviews of the existing science acknowledge that additional research will be needed to clarify key issues about the use of melatonin in children including the optimal dosage and duration of use as well the risks of long-term side effects.</p>
+                <p>Because of the uncertainties the remain regarding melatonin’s use by children, the AAP recommends that parents work closely with their child’s doctor before administering melatonin supplements.</p>
+                <h5><b>Additional Steps to Improve Sleep</b></h5>
+                <p>People with sleeping problems can benefit from taking steps to develop healthy sleep habits. Even if melatonin offers relief, improving their sleep routines and environment — known collectively as sleep hygiene — can promote durable sleep quality improvement.</p>
+                <p>Talking with a doctor about melatonin and sleeping problems can also help reveal whether a person has an underlying sleep disorder. For example, raising poor sleep issues or excessive sleepiness may uncover a problem like sleep apnea. Melatonin isn’t a therapy for sleep apnea, but in this scenario, working with the doctor can lead to more appropriate and effective treatments.</p>
+                <h3><b>What Are the Side Effects of Melatonin?</b></h3>
+                <p>In children, the reported side effects of short-term use are similar as in adults. Some children may experience agitation or an increased risk of bedwetting when using melatonin.</p>
+                <p>For both children and adults, talking with a doctor before taking melatonin can help prevent possible allergic reactions or harmful interactions with other medications. People taking anti-epilepsy and blood thinning medications, in particular, should ask their physician about potential drug interactions.</p>
+                <p>The American Academy of Sleep Medicine recommends against melatonin use in people with dementia, and there is little research about its safety in women who are pregnant or breastfeeding.</p>
+                <h3><b>What is the Appropriate Dosage of Melatonin?</b></h3>
+                <p>There is no consensus about the optimal dosage of melatonin although most experts advise to avoid extremely high dosages. In studies, dosages range from .1 to 12 milligrams (mg). A typical dose in supplements is between one and three milligrams, but whether this is appropriate for any specific person depends on factors like their age and sleeping problems. You may find melatonin in dosages of micrograms (mcg), 1000 mcg is equivalent to 1 mg.</p>
+                <p>Some people experience daytime sleepiness when using melatonin as a sleep aid. If you experience this, it could be that your dosage is too high. It’s advisable to start with the lowest dosage possible and work your way up gradually under the supervision of your doctor.</p>
+                <p>The AAP advises against dosages above 3-6 mg for children and states that many young people respond to small doses of .5 to 1 mg. Some studies have found benefits to lower doses in adults as well.</p>
+                <h3><b>How to Choose Melatonin Supplements</b></h3>
+                <p>Melatonin is sold in the U.S. as a dietary supplement and not as a medication. This is a vital distinction because it means that melatonin products are not closely regulated by the Food and Drug Administration (FDA).</p>
+                <p>A wide range of brands with varying formulations and dosages are available over-the-counter in groceries and drugs stores, but there are important quality differences to look out for. A study that reviewed 31 melatonin supplements found major inaccuracies in dosage informationTrusted Source
+                    National Library of Medicine, Biotech Information
+                    The National Center for Biotechnology Information advances science and health by providing access to biomedical and genomic information.; 71% of the tested products were not within 10% of their listed dosage. An incorrect dose of melatonin can have meaningful consequences including a higher risk of side effects and reduced supplement effectiveness.</p>
+                <p>Some products labeled as only containing melatonin contained impurities or other compounds, such as serotonin, that can pose health risks. Melatonin is often combined with magnesium, valerian root, or other natural sleep aids in supplements, which may further affect the accuracy of dosages and labeling.</p>
+            </div>
+        </div>
         {% include 'footer.html' %}
     </body>
 </html>

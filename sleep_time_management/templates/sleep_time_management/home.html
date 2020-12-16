@@ -1,6 +1,10 @@
 <html>
   <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=,initial-scale="/>
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
                 integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
                 crossorigin="anonymous">
@@ -40,8 +44,8 @@
                 font-family: Rubik Mono One;
             }
             .container {
-                margin: 200px;
-                margin-bottom: 105;
+                margin: 250px;
+                margin-bottom: 57;
             }
             .button {
                 text-decoration: none;
@@ -72,6 +76,20 @@
             body .button {
                 font-family: Rubik Mono One;
             }
+            .clock {
+                position: absolute;
+                font-family: 'Orbitron', sans-serif !important;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                color: #17D4FE;
+                font-size: 60px;
+                letter-spacing: 7px;
+                background-color: black;
+                text-align: center;
+                width: 550px;
+                border-radius: 10px;
+                top: 150px;
+            }
         </style>
     </head>
 
@@ -85,7 +103,39 @@
             </div>
             {% endfor %}
         {% endif %}
-        
+        <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+        <script>
+            function showTime(){
+                var date = new Date();
+                var h = date.getHours(); // 0 - 23
+                var m = date.getMinutes(); // 0 - 59
+                var s = date.getSeconds(); // 0 - 59
+                var session = "AM";
+                
+                if(h == 0){
+                    h = 12;
+                }
+                
+                if(h > 12){
+                    h = h - 12;
+                    session = "PM";
+                }
+                
+                h = (h < 10) ? "0" + h : h;
+                m = (m < 10) ? "0" + m : m;
+                s = (s < 10) ? "0" + s : s;
+                
+                var time = h + ":" + m + ":" + s + " " + session;
+                document.getElementById("MyClockDisplay").innerText = time;
+                document.getElementById("MyClockDisplay").textContent = time;
+                
+                setTimeout(showTime, 1000);
+                
+            }
+
+            showTime();
+
+        </script>
         <div class="container">
             <div class="time">
             <h1>I have to wake up at</h1>
