@@ -31,3 +31,6 @@ Have A Night Day is a web application that will calculate your sleeping time bas
 * [Panida 	Ounnaitham](https://github.com/PanidaOun) 
 * [Phakarat 	Khongphaisan](https://github.com/pakarat044)
 * [Pitchapa 	Sae-lim](https://github.com/PitchapaSaelim)
+
+## URL of Deployed App
+* https://haveanightday.herokuapp.com/
