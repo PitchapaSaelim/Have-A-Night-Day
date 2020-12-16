@@ -14,7 +14,8 @@ class Profile(models.Model):
     birth_date = models.DateField(null=True, blank=True)
     gender = models.CharField(max_length=50, default='')
     age_span = models.CharField(max_length=100, default='')
-    average = models.CharField(max_length=100, default='', help_text='average sleep time')
+    average = models.CharField(
+        max_length=100, default='', help_text='average sleep time')
 
     def calculate_average(self):
         """Calculate average of sleep data."""
@@ -40,4 +41,4 @@ def update_user_profile(sender, instance, created, **kwargs):
     """Update the user profile."""
     if created:
         Profile.objects.create(user=instance)
-    instance.profile.save() 
+    instance.profile.save()

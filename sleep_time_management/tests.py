@@ -7,7 +7,7 @@ from django.test import TestCase
 class CalculateViewsTest(TestCase):
     """Class to test feature about CalculateViews."""
 
-    def test_calculate_wakeup_time(self): 
+    def test_calculate_wakeup_time(self):
         """Test when user input wake up time and application can calculate sleep time correctly."""
         sleeptime = ['22:30', '21:00', '19:30', '18:00', '16:30', '15:00']
         sleep_time_from_app = calculate_waketime('00:00')

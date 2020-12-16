@@ -13,7 +13,7 @@ class Eventtime(models.Model):
     wake_event_time = models.IntegerField(
         default=0, help_text='wake event time')
     sleep_data = models.TextField(default='', help_text='sleep data')
-    date = models.DateTimeField('date eventtime', null=True) 
+    date = models.DateTimeField('date eventtime', null=True)
 
     def __str__(self):
         """Return the username."""

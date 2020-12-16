@@ -14,7 +14,7 @@ class AuthorModelTest(TestCase):
         user = User.objects.create_user(
             username='Saiparn', password='@Parn123')
         user.first_name = 'Panida'
-        user.last_name = 'Ounnaitham' 
+        user.last_name = 'Ounnaitham'
         user.save()
 
     def test_user_name_in_database(self):
