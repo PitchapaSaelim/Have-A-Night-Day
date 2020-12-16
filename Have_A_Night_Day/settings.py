@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-# import django_heroku
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -137,4 +137,4 @@ LOGIN_REQUIRED_URL = 'sleep_time_management:home'
 
 LOGIN_URL = 'login'
 
-# django_heroku.settings(locals(), test_runner=False)
+django_heroku.settings(locals(), test_runner=False)
