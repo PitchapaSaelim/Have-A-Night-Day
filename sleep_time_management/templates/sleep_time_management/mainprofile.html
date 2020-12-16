@@ -78,18 +78,29 @@
             }
             h4.text {
                 margin: 10px;
-                margin-bottom: revert;
+                margin-bottom: 37px;
+            }
+            .agetext {
+                background-color: black; 
+                color:white;
+                width: fit-content;
+                margin: auto;
+                padding: 8px 100px;
+                border-radius: 10px;
+                min-height: 50px;
+                margin-bottom: 25px;
             }
             #control-container {
                 padding: 0px !important;
             }
 
-            .disease {
+            .Cal {
                 display: inline;
+                padding: 10px 40px;
             }
             .dis {
                 display: block;
-                margin-top: 60px;
+                margin-top: 40px;
             }
             .chart_div {
                 background-color: black;
@@ -103,6 +114,14 @@
                 margin: auto;
                 width: fit-content;
             }
+            .disease {
+                background: rgba(255, 252, 252, 0.31);;
+                color: #0D1F2D;
+                padding: 8px 15px;
+                border-radius: 10px;
+                margin: auto 5px;
+                border: 1px solid #0D1F2D;
+            }
 
         </style>
 
@@ -111,9 +130,9 @@
         {% include 'navbar.html' %}
         <div class="container">
             <a><img class="profile" src="..\..\..\..\static\user\images\profile.png" alt="logo" ></a>
+            <h4 class="agetext">{{user.profile.age_span}}</h4>
             <div class="alldata">
                 <div class="data">
-                    <h4 class="text">{{user.profile.age_span}}</h4>
                     <h4 class="text">Name</h4>
                     <h4 class="text">Surname</h4>
                     <h4 class="text">E-mail address</h4>
@@ -191,16 +210,16 @@
 
             {% endblock %}
             <h4>Average sleep data: {{user.profile.average}} hours</h4> 
-            <h5>Diseases that {{user.first_name}} are at risk from the average {{user.profile.average}} hours of sleep: </h4> 
+            <h5 style="margin-bottom: 30px;">Diseases that {{user.first_name}} are at risk from the average {{user.profile.average}} hours of sleep: </h4> 
             {% if no_disease %}  
                 {{no_disease}}
             {% else %} 
                 {% for disease in disease_list %}
-                {{forloop.counter}}. {{disease}}<br />
+                <a href="#{{disease}}"><span class="disease">{{disease}}</span></a>
                 {% endfor %}
             {% endif %}
             <div class="dis">
-                <a class="button disease" href="{% url 'sleep_time_management:information'%}">More detail!</a>
+                <a class="button Cal" href="{% url 'sleep_time_management:home'%}">Calculate</a>
             </div>
             
         </div>
