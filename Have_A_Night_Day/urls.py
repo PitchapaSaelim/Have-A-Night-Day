@@ -20,7 +20,6 @@ from user.views import register_user_view
 from user.views import login_view
 from user.views import logout_view
 
-from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
