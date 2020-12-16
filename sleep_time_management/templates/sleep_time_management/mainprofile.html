@@ -190,10 +190,14 @@
 
             {% endblock %}
             <h4>Average sleep data: {{user.profile.average}} hours</h4> 
-            <h5>Diseases that {{user.username}} are at risk from the average {{user.profile.average}} hours of sleep: </h4> 
-            {% for disease in disease_list %}
-            {{forloop.counter}}. {{disease}}<br />
-            {% endfor %}
+            <h5>Diseases that {{user.first_name}} are at risk from the average {{user.profile.average}} hours of sleep: </h4> 
+            {% if no_disease %}  
+                {{no_disease}}
+            {% else %} 
+                {% for disease in disease_list %}
+                {{forloop.counter}}. {{disease}}<br />
+                {% endfor %}
+            {% endif %}
             <div class="dis">
                 <a class="button disease" href="{% url 'sleep_time_management:information'%}">More detail!</a>
             </div>

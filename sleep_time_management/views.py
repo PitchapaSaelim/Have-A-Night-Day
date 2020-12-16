@@ -126,6 +126,12 @@ def mainprofile(request):
     request.user.profile.average = average
     request.user.profile.save()
     disease_list = get_disease_list(age, request.user.profile.gender, average)
+    if average == 0:
+        no_disease = "Please calculate your sleep data in the calculator for us to assess the risk of diseases for you."
+        return render(request, 'sleep_time_management/mainprofile.html', {'age': age, 'no_disease': no_disease})
+    elif not disease_list:
+        no_disease = "No diseases that you are at risk of."
+        return render(request, 'sleep_time_management/mainprofile.html', {'age': age, 'no_disease': no_disease})
     return render(request, 'sleep_time_management/mainprofile.html', {'age': age, 'disease_list': disease_list})
 
 
@@ -163,12 +169,10 @@ def calculator3(request):
     return render(request, 'sleep_time_management/calculator3.html')
 
 
-@login_required
 def about_us(request):
     return render(request, 'sleep_time_management/aboutus.html')
 
 
-@login_required
 def contact_us(request):
     return render(request, 'sleep_time_management/contactus.html')
 

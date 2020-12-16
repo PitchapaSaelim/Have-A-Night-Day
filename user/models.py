@@ -22,6 +22,8 @@ class Profile(models.Model):
             time = i['sleep_data'].split(" ")
             count += 1
             sums += float(time[0])
+        if count == 0:
+            return 0
         return sums/count
 
     def __str__(self):
