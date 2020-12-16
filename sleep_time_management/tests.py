@@ -184,6 +184,19 @@ class CalculateViewsTest(TestCase):
         get_disease = get_disease_list(20,"Male",9)
         self.assertTrue( Disease in get_disease)
 
+    def test_get_disease_list_Male(self):
+        """Test when user is a male input age, sleep hour, and application can suggest disease correctly"""
+        get_disease = get_disease_list(20,"Male",9)
+        Disease = ['Diabetes mellitus (DM) /Impaired glucose tolerance (IGT)', 'Hypersomnia']
+        self.assertEqual( get_disease,Disease)
+
+    def test_get_disease_list_Female(self):
+        """Test when user is a female input age, sleep hour, and application can suggest disease correctly"""
+        get_disease = get_disease_list(67,"Female",4)
+        Disease = ['Depression', 'Colorectal cancer']
+        self.assertEqual( get_disease,Disease)
+
+
 
 
 

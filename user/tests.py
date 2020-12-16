@@ -17,15 +17,17 @@ class AuthorModelTest(TestCase):
         user.save()
     
     def test_user_name_in_database(self):
-        # User.objects.create_user(username='Big',password='@Parn123')
+        """Test if user name is in database"""
         user = User.objects.filter(username='Saiparn').first()
         self.assertEqual(user.username,'Saiparn')
 
     def test_addAccount(self):
+        """Test if register page is work."""
         response = self.client.post(reverse("register_user"),{'username':'Parn', 'fname':'Panida', 'lname':'Ounnaitham', 'birth_date':'2000-11-02', 'gender':'Female', 'password1':'Saiparn021143', 'password2':'Saiparn021143'})
         self.assertEqual(response.status_code, 302)
 
     def test_authenticate_user(self):
+        """Test if authenticated user is log in."""
         self.client.login(username='Saiparn',password='@Parn123') 
         self.assertIn('_auth_user_id', self.client.session)
     
@@ -39,12 +41,6 @@ class AuthorModelTest(TestCase):
         self.client.login(username='Saiparn',password='@Parn123')  
         response = self.client.get(reverse("sleep_time_management:home"))
         self.assertEqual(response.status_code, 200)
-
-    # def test_access_to_main_profile_with_authenticated_user(self):
-    #     """Test if authenticated user can access main profile page."""
-    #     self.client.login(username='Saiparn',password='@Parn123')  
-    #     response = self.client.get(reverse("sleep_time_management:mainprofile"))
-    #     self.assertEqual(response.status_code, 200)
 
     def test_access_to_about_us_with_authenticated_user(self):
         """Test if authenticated user can access about us page."""
@@ -153,4 +149,13 @@ class AuthorModelTest(TestCase):
         self.client.login(username='Saiparn',password='')
         response = self.client.get(reverse("sleep_time_management:home"))
         self.assertEqual(response.status_code, 302)
+
+    def test_regis_with_wrong_gender(self):
+        response = self.client.post(reverse("register_user"),{'username':'Parn', 'fname':'Panida', 'lname':'Ounnaitham', 'birth_date':'2000-11-02', 'gender':'fhwiv', 'password1':'Saiparn021143', 'password2':'Saiparn021143'})
+        self.assertEqual(response.status_code, 200) #cannot register because wrong gender so not redirect
+    
+    def test_regis_with_wrong_birthday(self):
+        response = self.client.post(reverse("register_user"),{'username':'Parn', 'fname':'Panida', 'lname':'Ounnaitham', 'birth_date':'2034-11-02', 'gender':'fhwiv', 'password1':'Saiparn021143', 'password2':'Saiparn021143'})
+        self.assertEqual(response.status_code, 200) #cannot register because wrong birth date so not redirect
+    
 
