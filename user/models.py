@@ -1,3 +1,4 @@
+"""Model for user that contains the essential fields and behaviors of the data."""
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
@@ -7,6 +8,8 @@ from sleep_time_management.models import Eventtime
 
 
 class Profile(models.Model):
+    """Class contains the essential fields and store database."""
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     birth_date = models.DateField(null=True, blank=True)
     gender = models.CharField(max_length=50, default='')
@@ -14,6 +17,7 @@ class Profile(models.Model):
     average = models.CharField(max_length=100, default='', help_text='average sleep time')
 
     def calculate_average(self):
+        """Calculate average of sleep data."""
         queryset = Eventtime.objects.filter(
             user=self.user).values('sleep_data')
         count = 0
@@ -27,11 +31,13 @@ class Profile(models.Model):
         return sums/count
 
     def __str__(self):
+        """Return the username."""
         return self.user.username
 
 
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
+    """Update the user profile."""
     if created:
         Profile.objects.create(user=instance)
     instance.profile.save()
