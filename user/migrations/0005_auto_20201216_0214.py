@@ -23,6 +23,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='profile',
             name='gender',
-            field=models.CharField(default='', max_length=6),
+            field=models.CharField(default='', max_length=50),
         ),
     ]

@@ -9,7 +9,7 @@ from sleep_time_management.models import Eventtime
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     birth_date = models.DateField(null=True, blank=True)
-    gender = models.CharField(max_length=6, default='')
+    gender = models.CharField(max_length=50, default='')
     age_span = models.CharField(max_length=100, default='')
     average = models.CharField(max_length=100, default='', help_text='average sleep time')
 
