@@ -23,7 +23,7 @@ class ProfileUpdateForm(forms.ModelForm):
         """Class that container with some options (metadata) attached to the model."""
 
         model = Profile
-        fields = ['birth_date', 'gender']
+        fields = ['birth_date', 'gender'] 
 
     def clean(self):
         """Check format about gender and birth date."""

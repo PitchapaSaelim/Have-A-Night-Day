@@ -1,20 +1,23 @@
+"""A View for application that show what you see when you render a website."""
 from django.shortcuts import render, redirect
 
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+
+from django.http import JsonResponse
+
+from django.utils import timezone
 
 from .forms import UserUpdateForm, ProfileUpdateForm
 
 from .models import Eventtime
 
-from django.http import JsonResponse
-
-from django.utils import timezone
 from datetime import date
-from django.contrib import messages
 
 
 def get_age_span(age):
+    """Get the age span from the age of user."""
     if 1 >= age or age <= 2:
         return 'Toddler'
     elif 3 >= age or age <= 5:
@@ -32,6 +35,7 @@ def get_age_span(age):
 
 
 def get_sleep_hour(age_span):
+    """Get the number of hours that the user should sleep by age span."""
     if age_span == 'Toddler':
         return '11-14 hours'
     elif age_span == 'Preschool':
@@ -49,6 +53,7 @@ def get_sleep_hour(age_span):
 
 
 def get_disease_list(age, gender, average_sleep):
+    """Get the name of the diseases, analyzed by sleep hours and age."""
     disease = []
     hour = float(average_sleep)
     if 25 >= age or age <= 59:
@@ -106,15 +111,18 @@ def get_disease_list(age, gender, average_sleep):
 
 @login_required
 def home(request):
+    """Render the home page."""
     return render(request, 'sleep_time_management/home.html')
 
 
 def information(request):
+    """Render the information page."""
     return render(request, 'sleep_time_management/information.html')
 
 
 @login_required
 def mainprofile(request):
+    """Render the main profile page."""
     disease_list = []
     today = date.today()
     birthday = request.user.profile.birth_date
@@ -137,6 +145,7 @@ def mainprofile(request):
 
 @login_required
 def editprofile(request):
+    """Render the edit profile page."""
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST,
@@ -145,7 +154,7 @@ def editprofile(request):
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
-            return render(request, 'sleep_time_management/mainprofile.html')
+            return redirect('sleep_time_management:mainprofile')
 
     else:
         u_form = UserUpdateForm(instance=request.user)
@@ -161,30 +170,36 @@ def editprofile(request):
 
 @login_required
 def calculator2(request):
+    """Render the calculator page."""
     return render(request, 'sleep_time_management/calculator2.html')
 
 
 @login_required
 def calculator3(request):
+    """Render the calculator page."""
     return render(request, 'sleep_time_management/calculator3.html')
 
 
 def about_us(request):
+    """Render the about us page."""
     return render(request, 'sleep_time_management/aboutus.html')
 
 
 def contact_us(request):
+    """Render the contact us page."""
     return render(request, 'sleep_time_management/contactus.html')
 
 
 @login_required
 def logout_view(request):
+    """Render the log in page when the user logged out."""
     logout(request)
 
     return redirect("/login")
 
 
 def calculate2_view(request):
+    """Render the calculator page when the user calculated the sleep cycle."""
     if request.method == 'POST':
         sleep_hour = get_sleep_hour(request.user.profile.age_span)
         waketime = request.POST["waketime"]
@@ -208,6 +223,7 @@ def calculate2_view(request):
 
 
 def calculate_waketime(waketime):
+    """Get the list of time when the user calculates the wake time."""
     time = waketime.split(':')
     caltime = (int(time[0])*60)+int(time[1])
     listtime = []
@@ -228,6 +244,7 @@ def calculate_waketime(waketime):
 
 
 def calculate_sleeptime(sleeptime):
+    """Get the list of time when the user calculates the bedtime."""
     time = sleeptime.split(':')
     caltime = (int(time[0])*60)+int(time[1])
     listtime = []
@@ -249,6 +266,7 @@ def calculate_sleeptime(sleeptime):
 
 
 def calculate3_view(request):
+    """Render the calculator page when the user calculated the sleep cycle."""
     if request.method == 'POST':
         sleep_hour = get_sleep_hour(request.user.profile.age_span)
         sleeptime = request.POST["sleeptime"]
@@ -268,6 +286,7 @@ def calculate3_view(request):
 
 
 def bed_sleep_data(request):
+    """Render the home page when the user submits the time needs to sleep."""
     if request.method == 'POST':
         get_bed_event_time = request.POST["bed_event_time"]
         time = get_bed_event_time.split(':')
@@ -283,6 +302,7 @@ def bed_sleep_data(request):
 
 
 def wake_sleep_data(request):
+    """Render the home page when the user submits the time needs to sleep."""
     if request.method == 'POST':
         get_wake_event_time = request.POST["wake_event_time"]
         time = get_wake_event_time.split(':')
@@ -296,6 +316,7 @@ def wake_sleep_data(request):
 
 
 def sleep_chart(request):
+    """Show the sleep data bar chart that collect the sleep data."""
     labels = []
     data = []
     count = 1

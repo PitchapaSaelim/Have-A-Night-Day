@@ -40,4 +40,4 @@ def update_user_profile(sender, instance, created, **kwargs):
     """Update the user profile."""
     if created:
         Profile.objects.create(user=instance)
-    instance.profile.save()
+    instance.profile.save() 

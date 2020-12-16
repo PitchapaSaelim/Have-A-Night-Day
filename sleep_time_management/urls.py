@@ -1,4 +1,4 @@
-from django.contrib import admin
+"""URLs path expressions for a web application."""
 from django.urls import path
 
 from . import views

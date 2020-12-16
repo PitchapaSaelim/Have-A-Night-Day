@@ -40,4 +40,4 @@ class NewForm(UserCreationForm):
         user.last_name = self.cleaned_data["lname"]
         if commit:
             user.save()
-        return user
+        return user 
