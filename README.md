@@ -10,7 +10,7 @@ Have A Night Day is a web application that will calculate your sleeping time bas
 * [Requirements](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Requirements)
 * [Project Installation Instructions](INSTALL.md)
 
-Iteration
+### Iteration Plan
 * [Set up a project](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Set-up-a-project)
 * [Iteration 1 Plan](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Iteration-1-Plan) and [Task Board](https://github.com/PitchapaSaelim/Have-A-Night-Day/projects/1)
 * [Iteration 2 Plan](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Iteration-2-Plan) and [Task Board](https://github.com/PitchapaSaelim/Have-A-Night-Day/projects/2)
@@ -22,19 +22,12 @@ Iteration
 * [Iteration 8 Plan](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Iteration-8-Plan) and [Task Board](https://github.com/PitchapaSaelim/Have-A-Night-Day/projects/8)
 * [Iteration 9 Plan](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Iteration-9-Plan) and [Task Board](https://github.com/PitchapaSaelim/Have-A-Night-Day/projects/9)
 
-Code Review
+### Code Review
 * [Procedure](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Procedure)
 * [Checklist](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Checklist)
 
-## Team Members
+## Team Members and contributors
 
 * [Panida 	Ounnaitham](https://github.com/PanidaOun) 
 * [Phakarat 	Khongphaisan](https://github.com/pakarat044)
 * [Pitchapa 	Sae-lim](https://github.com/PitchapaSaelim)
-
-## Licensing
-
-Contact our team members to license.
-* @PanidaOun
-* @pakarat044 
-* @PitchapaSaelim

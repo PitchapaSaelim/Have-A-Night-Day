@@ -194,7 +194,7 @@ class CalculateViewsTest(TestCase):
         """Test when user is a female input age, sleep hour, and application can suggest disease correctly"""
         get_disease = get_disease_list(67,"Female",4)
         Disease = ['Depression', 'Colorectal cancer']
-        self.assertEqual( get_disease,Disease)
+        self.assertEqual( get_disease,Disease)       
 
 
 

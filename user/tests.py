@@ -151,11 +151,16 @@ class AuthorModelTest(TestCase):
         self.assertEqual(response.status_code, 302)
 
     def test_regis_with_wrong_gender(self):
+        """Test user cannot regis if user input wrong gender format"""
         response = self.client.post(reverse("register_user"),{'username':'Parn', 'fname':'Panida', 'lname':'Ounnaitham', 'birth_date':'2000-11-02', 'gender':'fhwiv', 'password1':'Saiparn021143', 'password2':'Saiparn021143'})
         self.assertEqual(response.status_code, 200) #cannot register because wrong gender so not redirect
     
     def test_regis_with_wrong_birthday(self):
         response = self.client.post(reverse("register_user"),{'username':'Parn', 'fname':'Panida', 'lname':'Ounnaitham', 'birth_date':'2034-11-02', 'gender':'fhwiv', 'password1':'Saiparn021143', 'password2':'Saiparn021143'})
         self.assertEqual(response.status_code, 200) #cannot register because wrong birth date so not redirect
+            
+              
+               
+
     
 
