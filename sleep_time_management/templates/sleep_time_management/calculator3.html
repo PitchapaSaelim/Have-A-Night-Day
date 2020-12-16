@@ -88,7 +88,7 @@
         {% include 'navbar.html' %}
         <div class="container">
             <h1>You should try to wake up at one of the following times</h1>
- 
+            <p><span>SUGGESTION for {{user.profile.age_span}}:</span> {{user.first_name}} needs sleep of {{sleep_hour}}.</p> 
             <form action="{% url 'sleep_time_management:wake_sleep_data'%}" method="POST">
             {%csrf_token%}
                 <select id="mySelect" name="wake_event_time">
@@ -103,7 +103,6 @@
         </div>
 
         <a class="button" href="{% url 'sleep_time_management:home'%}">calculate again</a>
-        <p><span>SUGGESTION:</span> A good night's sleep consists of 5-6 complete sleep cycles.</p> 
 
         <script>
             /* When the user clicks on the button, 

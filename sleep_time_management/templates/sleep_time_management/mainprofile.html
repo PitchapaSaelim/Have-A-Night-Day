@@ -112,10 +112,12 @@
             <a><img class="profile" src="..\..\..\..\static\user\images\profile.png" alt="logo" ></a>
             <div class="alldata">
                 <div class="data">
+                    <h4 class="text">{{user.profile.age_span}}</h4>
                     <h4 class="text">Name</h4>
                     <h4 class="text">Surname</h4>
                     <h4 class="text">E-mail address</h4>
                     <h4 class="text">Birthday</h4>
+                    <h4 class="text">Age</h4>
                     <h4 class="text">Gender</h4>
                 </div>
                 <div class="infomation">
@@ -123,6 +125,7 @@
                     <h4 class="info">{{user.last_name}}</h4>
                     <h4 class="info">{{user.email}}</h4>
                     <h4 class="info">{{user.profile.birth_date}}</h4>
+                    <h4 class="info">{{age}}</h4>
                     <h4 class="info">{{user.profile.gender}}</h4>
                 </div>
             </div>
@@ -152,19 +155,28 @@
                             data: {
                             labels: data.labels,
                             datasets: [{
-                                label: 'hour',
-                                backgroundColor: 'white',
-                                data: data.data
+                                label: 'Hours',
+                                backgroundColor: '#E4F2FB',
+                                data: data.data,
                             }]          
                             },
                             options: {
+                                scales: {
+                                    xAxes: [{
+                                        gridLines: {
+                                            display:false
+                                        }
+                                    }],
+                                },
                             responsive: true,
                             legend: {
                                 position: 'top',
                             },
                             title: {
                                 display: true,
-                                text: 'Sleep Bar Chart'
+                                text: 'Sleep Data Bar Chart',
+                                fontSize: 40,
+                                fontColor: '#0D1F2D'
                             }
                             }
                         });
@@ -177,8 +189,12 @@
                 </script>
 
             {% endblock %}
+            <h4>Average sleep data: {{user.profile.average}} hours</h4> 
+            <h5>Diseases that {{user.username}} are at risk from the average {{user.profile.average}} hours of sleep: </h4> 
+            {% for disease in disease_list %}
+            {{forloop.counter}}. {{disease}}<br />
+            {% endfor %}
             <div class="dis">
-                <h4>disease that is at risk of</h4> 
                 <a class="button disease" href="{% url 'sleep_time_management:information'%}">More detail!</a>
             </div>
             
