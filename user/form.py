@@ -25,7 +25,7 @@ class NewForm(UserCreationForm):
         input_gender = cleaned_data.get("gender")
         today = date.today()
         if input_gender != "Male" and input_gender != "Female":
-            raise forms.ValidationError("Please input only male or female")
+            raise forms.ValidationError("Please input only Male or Female")
         if dob.year > today.year:
             raise forms.ValidationError("Please input a valid birth date!")
         return cleaned_data

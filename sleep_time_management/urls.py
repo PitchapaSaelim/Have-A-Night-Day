@@ -7,7 +7,7 @@ app_name = 'sleep_time_management'
 
 urlpatterns = [
     path('home/', views.home, name='home'),
-    path('information/', views.information, name='information'),
+    path('mainprofile/information/', views.information, name='information'),
     path('mainprofile/', views.mainprofile, name='mainprofile'),
     path('mainprofile/edit', views.editprofile, name='editprofile'),
     path('calculator/waketime', views.calculate2_view, name='calculator2'),
