@@ -29,8 +29,11 @@ class NewForm(UserCreationForm):
         today = date.today()
         if input_gender != "Male" and input_gender != "Female":
             raise forms.ValidationError("Please input only Male or Female")
-        if dob.year > today.year:
-            raise forms.ValidationError("Please input a valid birth date!")
+        try:
+            if dob.year > today.year:
+                raise forms.ValidationError("Please input a valid birth date!")
+        except AttributeError:
+            raise forms.ValidationError("Wrong birth date format, please input this Format: YYYY-MM-DD!")
         return cleaned_data
 
     def save(self, commit=True):
