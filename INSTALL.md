@@ -106,9 +106,9 @@
         ...\> py manage.py loaddata users.json
         ``` 
 ## How to start the application and verify it is working
-1. **Clone** Have-A-Night-Day project to your machine. (*See how to clone the project above.*)
-2. Follows the **setting up a virtual environment** above.
-3. Follows the **steps needed to configure the application for running** above.
+1. **Clone** Have-A-Night-Day project to your machine. [*See how to clone the project.*](https://github.com/PitchapaSaelim/Have-A-Night-Day/blob/master/INSTALL.md#how-to-clone-have-a-night-day-project)
+2. Follows the [**setting up a virtual environment**](https://github.com/PitchapaSaelim/Have-A-Night-Day/blob/master/INSTALL.md#instructions-for-setting-up-a-virtual-environment-virtualenv).
+3. Follows the [**steps needed to configure the application for running**](https://github.com/PitchapaSaelim/Have-A-Night-Day/blob/master/INSTALL.md#steps-needed-to-configure-the-application-for-running).
 4. Access to a command-line/terminal window.
     * Change directory to the directory that contain `Have-A-Night-Day` folder.
         ```
