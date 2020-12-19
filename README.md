@@ -5,9 +5,10 @@
 Have A Night Day is a web application that will calculate your sleeping time based on the sleep cycles, estimate the best times to fall asleep and wake up, and provide knowledge and suggestions about sleeping well.
 
 ## Project Documents
-
+* [Proposal](https://docs.google.com/document/d/1Zmqgp2Y5O_KVBX1LwQsuxS_ODyVzY1S5BrxA0p7Xb-k/edit?usp=sharing)
 * [Vision Statement](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Vision-Statement)
 * [Requirements](https://github.com/PitchapaSaelim/Have-A-Night-Day/wiki/Requirements)
+* [Presentation](https://docs.google.com/presentation/d/1VHWDLJgkqfvZb7eqKFfpYbasYs80ewiPuSGwi7rV1Og/edit?usp=sharing)
 
 ### Getting Started
 * [Project Installation Instructions](INSTALL.md)
