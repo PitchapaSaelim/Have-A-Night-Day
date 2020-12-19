@@ -26,7 +26,10 @@ class Profile(models.Model):
         for i in queryset:
             time = i['sleep_data'].split(" ")
             count += 1
-            sums += float(time[0])
+            if time[0] == "":
+                return 0
+            else:
+                sums += float(time[0])
         if count == 0:
             return 0
         return sums/count
