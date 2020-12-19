@@ -292,4 +292,49 @@ def calculate3_view(request):
 def bed_sleep_data(request):
     """Render the home page when the user submits the time needs to sleep."""
     if request.method == 'POST':
-        get_bed_even
+        get_bed_event_time = request.POST["bed_event_time"]
+        time = get_bed_event_time.split(':')
+        cal_bed_time = (int(time[0])*60)+int(time[1])
+        today = date.today()
+        bed_event_time = Eventtime.objects.filter(
+            user=request.user, date__day=today.day).first()
+        bed_event_time.bed_event_time = cal_bed_time
+        bed_event_time.save()
+    bed_event_time.sleep_data = bed_event_time.calculate_sleep_wake_data()
+    bed_event_time.save()
+    return render(request, 'sleep_time_management/home.html')
+
+
+def wake_sleep_data(request):
+    """Render the home page when the user submits the time needs to sleep."""
+    if request.method == 'POST':
+        get_wake_event_time = request.POST["wake_event_time"]
+        time = get_wake_event_time.split(':')
+        cal_wake_time = (int(time[0])*60)+int(time[1])
+        wake_event_time = Eventtime.objects.filter(user=request.user).first()
+        wake_event_time.wake_event_time = cal_wake_time
+        wake_event_time.save()
+    wake_event_time.sleep_data = wake_event_time.calculate_sleep_bed_data()
+    wake_event_time.save()
+    return render(request, 'sleep_time_management/home.html')
+
+
+def sleep_chart(request):
+    """Show the sleep data bar chart that collect the sleep data."""
+    labels = []
+    data = []
+    count = 1
+
+    queryset = Eventtime.objects.filter(user=request.user).values('sleep_data')
+
+    for i in queryset:
+        time = i['sleep_data'].split(" ")
+        date = "Day " + str(count)
+        labels.append(date)
+        data.append(float(time[0]))
+        count += 1
+
+    return JsonResponse(data={
+        'labels': labels,
+        'data': data,
+    })
