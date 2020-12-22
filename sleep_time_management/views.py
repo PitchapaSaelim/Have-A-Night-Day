@@ -311,7 +311,8 @@ def wake_sleep_data(request):
         get_wake_event_time = request.POST["wake_event_time"]
         time = get_wake_event_time.split(':')
         cal_wake_time = (int(time[0])*60)+int(time[1])
-        wake_event_time = Eventtime.objects.filter(user=request.user).first()
+        today = date.today()
+        wake_event_time = Eventtime.objects.filter(user=request.user, date__day=today.day).first()
         wake_event_time.wake_event_time = cal_wake_time
         wake_event_time.save()
     wake_event_time.sleep_data = wake_event_time.calculate_sleep_bed_data()
